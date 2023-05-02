@@ -89,6 +89,7 @@
 		44113ABE2A00F90C0036510D /* BusinessFinder */ = {
 			isa = PBXGroup;
 			children = (
+				44113AEE2A01DAA10036510D /* Views */,
 				44113AE92A0168B50036510D /* Domain */,
 				44113AE62A0165D60036510D /* Repository */,
 				44113ACF2A00FAC20036510D /* Data */,
@@ -177,6 +178,21 @@
 				44113AEA2A0168CC0036510D /* GetBusiness.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		44113AEE2A01DAA10036510D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44113AEF2A01DAAB0036510D /* Business */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44113AEF2A01DAAB0036510D /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 		B5B9799E01A9146436D294EA /* Pods */ = {

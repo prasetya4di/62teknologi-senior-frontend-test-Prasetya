@@ -19,6 +19,6 @@ class BusinessRepositoryImpl: BusinessRepository {
     }
     
     func getBusiness(location: String) async throws -> BusinessResponse {
-        businessService.getBusiness(location: location)
+        try await businessService.getBusiness(location: location)
     }
 }
