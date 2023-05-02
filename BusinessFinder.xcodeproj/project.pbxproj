@@ -13,6 +13,7 @@
 		44113AC72A00F90D0036510D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44113AC62A00F90D0036510D /* Preview Assets.xcassets */; };
 		44113ACE2A00F9500036510D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 44113ACD2A00F9500036510D /* .gitignore */; };
 		44113AD72A00FEBF0036510D /* BusinessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AD62A00FEBF0036510D /* BusinessResponse.swift */; };
+		44113AD92A0102A60036510D /* BusinessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AD82A0102A60036510D /* BusinessService.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		44113AC62A00F90D0036510D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		44113ACD2A00F9500036510D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		44113AD62A00FEBF0036510D /* BusinessResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessResponse.swift; sourceTree = "<group>"; };
+		44113AD82A0102A60036510D /* BusinessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessService.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		44113AD42A00FAEA0036510D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				44113AD82A0102A60036510D /* BusinessService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44113AD72A00FEBF0036510D /* BusinessResponse.swift in Sources */,
+				44113AD92A0102A60036510D /* BusinessService.swift in Sources */,
 				44113AC22A00F90C0036510D /* ContentView.swift in Sources */,
 				44113AC02A00F90C0036510D /* BusinessFinderApp.swift in Sources */,
 			);

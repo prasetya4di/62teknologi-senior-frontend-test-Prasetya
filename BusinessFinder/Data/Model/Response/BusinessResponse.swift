@@ -9,6 +9,8 @@ import Foundation
 
 struct BusinessResponse: Decodable {
     let businesses: [BusinessResponseData]
+    let total: String
+    let region: BusinessResponseRegion
 }
 
 struct BusinessResponseData: Decodable {
@@ -29,8 +31,6 @@ struct BusinessResponseData: Decodable {
     let displayPhone: String
     let distance: String?
     let hours: [BusinessResponseHours]
-    let total: String
-    let region: BusinessResponseRegion
 }
 
 struct BusinessResponseCategory: Decodable {
