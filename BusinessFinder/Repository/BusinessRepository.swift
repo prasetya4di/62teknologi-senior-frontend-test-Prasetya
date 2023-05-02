@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol BusinessRepository {
-    func getBusiness(location: String) -> DataResponsePublisher<BusinessResponse>
+    func getBusiness(location: String) async throws -> BusinessResponse
 }
 
 class BusinessRepositoryImpl: BusinessRepository {
@@ -18,7 +18,7 @@ class BusinessRepositoryImpl: BusinessRepository {
         self.businessService = businessService
     }
     
-    func getBusiness(location: String) -> DataResponsePublisher<BusinessResponse> {
+    func getBusiness(location: String) async throws -> BusinessResponse {
         businessService.getBusiness(location: location)
     }
 }
