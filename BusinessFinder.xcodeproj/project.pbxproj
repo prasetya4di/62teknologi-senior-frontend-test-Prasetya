@@ -20,6 +20,7 @@
 		44113AE32A0165450036510D /* BusinessLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AE22A0165450036510D /* BusinessLocation.swift */; };
 		44113AE52A0165810036510D /* BusinessHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AE42A0165810036510D /* BusinessHours.swift */; };
 		44113AE82A0165E80036510D /* BusinessRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AE72A0165E80036510D /* BusinessRepository.swift */; };
+		44113AEB2A0168CC0036510D /* GetBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AEA2A0168CC0036510D /* GetBusiness.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		44113AE22A0165450036510D /* BusinessLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLocation.swift; sourceTree = "<group>"; };
 		44113AE42A0165810036510D /* BusinessHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessHours.swift; sourceTree = "<group>"; };
 		44113AE72A0165E80036510D /* BusinessRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRepository.swift; sourceTree = "<group>"; };
+		44113AEA2A0168CC0036510D /* GetBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBusiness.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		44113ABE2A00F90C0036510D /* BusinessFinder */ = {
 			isa = PBXGroup;
 			children = (
+				44113AE92A0168B50036510D /* Domain */,
 				44113AE62A0165D60036510D /* Repository */,
 				44113ACF2A00FAC20036510D /* Data */,
 				44113ABF2A00F90C0036510D /* BusinessFinderApp.swift */,
@@ -163,6 +166,14 @@
 				44113AE72A0165E80036510D /* BusinessRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		44113AE92A0168B50036510D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				44113AEA2A0168CC0036510D /* GetBusiness.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		B5B9799E01A9146436D294EA /* Pods */ = {
@@ -291,6 +302,7 @@
 			files = (
 				44113AD72A00FEBF0036510D /* BusinessResponse.swift in Sources */,
 				44113AE82A0165E80036510D /* BusinessRepository.swift in Sources */,
+				44113AEB2A0168CC0036510D /* GetBusiness.swift in Sources */,
 				44113AE52A0165810036510D /* BusinessHours.swift in Sources */,
 				44113ADF2A0164FD0036510D /* BusinessCategory.swift in Sources */,
 				44113AD92A0102A60036510D /* BusinessService.swift in Sources */,

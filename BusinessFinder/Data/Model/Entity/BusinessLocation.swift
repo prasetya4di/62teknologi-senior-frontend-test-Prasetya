@@ -15,4 +15,16 @@ struct BusinessLocation {
     let state: String?
     let displayAddress: [String]
     let crossStreets: String?
+    
+    init(response: BusinessResponseLocation) {
+        address1 = response.address1
+        address2 = response.address2
+        address3 = response.address3
+        city = response.city
+        zipCode = response.zipCode
+        country = response.country
+        state = response.state
+        displayAddress = response.displayAddress
+        crossStreets = response.crossStreets
+    }
 }

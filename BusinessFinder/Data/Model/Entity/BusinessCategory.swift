@@ -8,4 +8,9 @@
 struct BusinessCategory {
     let alias: String
     let title: String
+    
+    init(response: BusinessResponseCategory) {
+        alias = response.alias
+        title = response.title
+    }
 }

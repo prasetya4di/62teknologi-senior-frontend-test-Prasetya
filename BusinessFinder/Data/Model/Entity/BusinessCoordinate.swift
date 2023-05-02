@@ -8,4 +8,9 @@
 struct BusinessCoordinate {
     let latitude: String
     let longitude: String
+    
+    init(response: BusinessResponseCoordinate) {
+        latitude = response.latitude
+        longitude = response.longitude
+    }
 }
