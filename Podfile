@@ -6,5 +6,6 @@ target 'BusinessFinder' do
   use_frameworks!
 
   # Pods for BusinessFinder
+  pod 'Alamofire'
 
 end
