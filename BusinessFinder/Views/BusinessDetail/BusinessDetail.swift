@@ -12,10 +12,26 @@ struct BusinessDetail: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                Text("Detail")
+            DetailImageCover(imageUrl: business.imageUrl)
+            VStack(alignment: .leading) {
+                HStack {
+                    BusinessDetailName(name: business.name)
+                    Spacer()
+                    VStack {
+                        BusinessRating(score: business.rating)
+                        BusinessReviewCount(total: business.reviewCount)
+                    }
+                }
+                
+                DetailPrice(price: business.price ?? "")
+               
+                BusinessCategories(categories: business.categoriesName)
+                
+                Divider()
             }
+            .padding(.horizontal)
         }
+        .ignoresSafeArea(edges: .top)
     }
 }
 
