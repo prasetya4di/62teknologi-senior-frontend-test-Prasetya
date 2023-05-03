@@ -13,9 +13,14 @@ struct BusinessList: View {
     var body: some View {
         VStack {
             ForEach(businesses, id: \.self.id) { business in
-                BusinessItem(
-                    business: business
-                )
+                NavigationLink {
+                    BusinessDetail(business: business)
+                } label: {
+                    BusinessItem(
+                        business: business
+                    )
+                }
+                .buttonStyle(.plain)
             }
         }
     }
