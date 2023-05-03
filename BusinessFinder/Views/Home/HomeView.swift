@@ -13,7 +13,7 @@ struct HomeView: View {
     @State private var searchText = ""
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 
                 if viewModel.viewState.isLoading {
@@ -30,7 +30,7 @@ struct HomeView: View {
             }
         }
         .navigationTitle("Business")
-        .padding()
+        .padding(.horizontal)
         .onAppear {
             viewModel.fetchBusiness()
         }

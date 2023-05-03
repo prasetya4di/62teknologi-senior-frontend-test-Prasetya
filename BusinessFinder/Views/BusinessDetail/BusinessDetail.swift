@@ -15,7 +15,7 @@ struct BusinessDetail: View {
     
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 if viewModel.viewState.isLoading {
                     BusinessDetailLoading()
