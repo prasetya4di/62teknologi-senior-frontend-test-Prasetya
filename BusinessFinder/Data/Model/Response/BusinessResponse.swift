@@ -22,7 +22,7 @@ struct BusinessResponseData: Decodable {
     let url: String
     let reviewCount: Int
     let categories: [BusinessResponseCategory]
-    let rating: Int
+    let rating: Double
     let coordinates: BusinessResponseCoordinate
     let transactions: [String]
     let price: String?

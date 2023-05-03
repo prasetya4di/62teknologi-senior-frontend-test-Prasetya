@@ -16,7 +16,7 @@ struct Business {
     let url: String
     let reviewCount: Int
     let categories: [BusinessCategory]
-    let rating: Int
+    let rating: Double
     private let coordinates: BusinessCoordinate
     let transactions: [String]
     let price: String?

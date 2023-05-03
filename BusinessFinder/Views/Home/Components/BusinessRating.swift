@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct BusinessRating: View {
-    let score: Int
+    let score: Double
     
     var body: some View {
         HStack {
             ForEach(1...5, id: \.self) { index in
                 Image(systemName: "star.fill")
-                    .foregroundColor(index > score ? .gray : .yellow)
-                    .padding(-5)
+                    .foregroundColor(index > Int(score) ? .gray : .yellow)
+                    .padding(.horizontal, -5)
             }
         }
     }
