@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    @EnvironmentObject var viewModel: HomeViewModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Business")
@@ -17,11 +19,8 @@ struct HomeView: View {
             BusinessList()
         }
         .padding()
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
+        .onAppear {
+            viewModel.fetchBusiness()
+        }
     }
 }
