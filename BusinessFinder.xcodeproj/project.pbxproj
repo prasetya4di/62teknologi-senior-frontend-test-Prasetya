@@ -76,6 +76,8 @@
 		44C59AA32A0298B100C2C2B4 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA22A0298B100C2C2B4 /* SortOption.swift */; };
 		44C59AA62A02991300C2C2B4 /* SortOptionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA52A02991300C2C2B4 /* SortOptionDao.swift */; };
 		44C59AA82A0299A400C2C2B4 /* FilterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA72A0299A400C2C2B4 /* FilterRepository.swift */; };
+		44C59AAA2A029A2E00C2C2B4 /* SortByPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA92A029A2E00C2C2B4 /* SortByPicker.swift */; };
+		44C59AAC2A029D4B00C2C2B4 /* GetSortOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AAB2A029D4B00C2C2B4 /* GetSortOptions.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -150,6 +152,8 @@
 		44C59AA22A0298B100C2C2B4 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		44C59AA52A02991300C2C2B4 /* SortOptionDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOptionDao.swift; sourceTree = "<group>"; };
 		44C59AA72A0299A400C2C2B4 /* FilterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRepository.swift; sourceTree = "<group>"; };
+		44C59AA92A029A2E00C2C2B4 /* SortByPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortByPicker.swift; sourceTree = "<group>"; };
+		44C59AAB2A029D4B00C2C2B4 /* GetSortOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSortOptions.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				44113B2B2A0234850036510D /* GetBusinessReviews.swift */,
 				44C59A942A027C4400C2C2B4 /* SearchBusiness.swift */,
 				44C59A9E2A028E5B00C2C2B4 /* LoadMoreBusiness.swift */,
+				44C59AAB2A029D4B00C2C2B4 /* GetSortOptions.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				44C59AA02A02981B00C2C2B4 /* NearbyBusinessToggle.swift */,
+				44C59AA92A029A2E00C2C2B4 /* SortByPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				44113B072A01ED1C0036510D /* HomeViewModel.swift in Sources */,
 				44113B1C2A02225C0036510D /* DetailOpenHour.swift in Sources */,
 				44C59A972A02812800C2C2B4 /* FilterToolbarButton.swift in Sources */,
+				44C59AAA2A029A2E00C2C2B4 /* SortByPicker.swift in Sources */,
 				44113AED2A01D6C30036510D /* NetworkManager.swift in Sources */,
 				44113B092A01ED390036510D /* HomeViewState.swift in Sources */,
 				44113B462A0248450036510D /* BusinessInformation.swift in Sources */,
@@ -595,6 +602,7 @@
 				44113B162A021B6E0036510D /* DetailImageCover.swift in Sources */,
 				44113AE52A0165810036510D /* BusinessHours.swift in Sources */,
 				44113B2A2A0233A50036510D /* ReviewUser.swift in Sources */,
+				44C59AAC2A029D4B00C2C2B4 /* GetSortOptions.swift in Sources */,
 				44113ADF2A0164FD0036510D /* BusinessCategory.swift in Sources */,
 				44113B182A021C170036510D /* BusinessDetailName.swift in Sources */,
 				44113AD92A0102A60036510D /* BusinessService.swift in Sources */,

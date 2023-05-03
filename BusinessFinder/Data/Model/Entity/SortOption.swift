@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct SortOption {
+struct SortOption: Identifiable, Hashable {
+    let id = UUID()
     let label: String
     let value: String
 }
