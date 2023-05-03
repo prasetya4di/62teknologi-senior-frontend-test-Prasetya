@@ -9,7 +9,7 @@ import Foundation
 
 struct BusinessResponse: Decodable {
     let businesses: [BusinessResponseData]
-    let total: String
+    let total: Int
     let region: BusinessResponseRegion
 }
 
@@ -29,8 +29,26 @@ struct BusinessResponseData: Decodable {
     let location: BusinessResponseLocation
     let phone: String
     let displayPhone: String
-    let distance: String?
-    let hours: [BusinessResponseHours]
+    let distance: Double?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case alias
+        case name
+        case imageUrl = "image_url"
+        case isClosed = "is_closed"
+        case url
+        case reviewCount = "review_count"
+        case categories
+        case rating
+        case coordinates
+        case transactions
+        case price
+        case location
+        case phone
+        case displayPhone = "display_phone"
+        case distance
+    }
 }
 
 struct BusinessResponseCategory: Decodable {
@@ -39,8 +57,8 @@ struct BusinessResponseCategory: Decodable {
 }
 
 struct BusinessResponseCoordinate: Decodable {
-    let latitude: String
-    let longitude: String
+    let latitude: Double
+    let longitude: Double
 }
 
 struct BusinessResponseLocation: Decodable {
@@ -53,12 +71,30 @@ struct BusinessResponseLocation: Decodable {
     let state: String?
     let displayAddress: [String]
     let crossStreets: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case address1
+        case address2
+        case address3
+        case city
+        case zipCode = "zip_code"
+        case country
+        case state
+        case displayAddress = "display_address"
+        case crossStreets = "cross_streets"
+    }
 }
 
 struct BusinessResponseHours: Decodable {
     let hourType: String
     let open: [BusinessResponseOpen]
     let isOpenNow: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case hourType = "hour_type"
+        case open
+        case isOpenNow = "is_open_now"
+    }
 }
 
 struct BusinessResponseOpen: Decodable {
@@ -66,6 +102,13 @@ struct BusinessResponseOpen: Decodable {
     let start: String
     let end: String
     let isOvernight: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case day
+        case start
+        case end
+        case isOvernight = "is_overnight"
+    }
 }
 
 struct BusinessResponseRegion: Decodable {
@@ -73,6 +116,6 @@ struct BusinessResponseRegion: Decodable {
 }
 
 struct BusinessResponseCenter: Decodable {
-    let latitude: String
-    let longitude: String
+    let latitude: Double
+    let longitude: Double
 }
