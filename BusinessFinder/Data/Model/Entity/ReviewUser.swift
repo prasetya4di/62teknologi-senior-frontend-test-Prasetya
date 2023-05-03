@@ -10,7 +10,7 @@ import Foundation
 struct User: Equatable {
     let id: String
     let profileURL: String
-    let imageURL: String
+    let imageURL: String?
     let name: String
     
     init(response: ReviewResponseUser) {

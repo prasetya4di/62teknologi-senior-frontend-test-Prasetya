@@ -38,7 +38,7 @@ struct ReviewResponseData: Codable {
 struct ReviewResponseUser: Codable {
     let id: String
     let profileURL: String
-    let imageURL: String
+    let imageURL: String?
     let name: String
 
     enum CodingKeys: String, CodingKey {

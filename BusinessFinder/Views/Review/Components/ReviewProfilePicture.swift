@@ -9,14 +9,23 @@ import Kingfisher
 import SwiftUI
 
 struct ReviewProfilePicture: View {
-    let imageUrl: String
+    let imageUrl: String?
     
+    @ViewBuilder
     var body: some View {
-        KFImage(URL(string: imageUrl))
-            .resizable()
-            .scaledToFit()
-            .clipShape(Circle())
-            .frame(width: 60, height: 60)
+        if let imageUrl {
+            KFImage(URL(string: imageUrl))
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .frame(width: 60, height: 60)
+        } else {
+            Image("EmptyProfilePicture")
+                .resizable()
+                .scaledToFit()
+                .clipShape(Circle())
+                .frame(width: 60, height: 60)
+        }
     }
 }
 

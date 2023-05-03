@@ -55,7 +55,7 @@ struct BusinessResponseHours: Decodable {
     let isOpenNow: Bool
     
     enum CodingKeys: String, CodingKey {
-        case hourType = "hour_type"
+        case hourType = "hours_type"
         case open
         case isOpenNow = "is_open_now"
     }

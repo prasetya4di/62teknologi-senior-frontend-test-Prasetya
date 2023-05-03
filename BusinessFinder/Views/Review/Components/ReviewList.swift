@@ -12,7 +12,7 @@ struct ReviewList: View {
     
     var body: some View {
         VStack {
-            ForEach(review, id: \.self.id) { review in
+            ForEach(review, id: \.id) { review in
                 ReviewItem(review: review)
             }
         }
