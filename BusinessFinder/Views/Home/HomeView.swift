@@ -24,9 +24,13 @@ struct HomeView: View {
                         viewModel.fetchSearchBusiness(key: searchText)
                     }
                     
-                    BusinessList(
-                        businesses: viewModel.viewState.businesses
-                    )
+                    if viewModel.viewState.businesses.isEmpty {
+                        EmptyBusinessText()
+                    } else {
+                        BusinessList(
+                            businesses: viewModel.viewState.businesses
+                        )
+                    }
                 }
             }
         }
