@@ -15,16 +15,44 @@ struct FilterView: View {
     @State private var selectedSortOption = SortOption(label: "", value: "")
     @State private var selectedPrice = ""
     
+    @Binding var isShow: Bool
+    
     var body: some View {
         VStack {
-            NearbyBusinessToggle(isOn: $nearbyLocation)
-            OnlyOpenStoreToggle(isOn: $onlyOpenStore)
-            SortByPicker(
-                selection: $selectedSortOption,
-                sortOptions: viewModel.viewState.sortOptions
-            )
-            PriceSelector(selectedPrice: $selectedPrice)
+            Text("Filter")
+                .font(.title)
+                .fontWeight(.bold)
+            
+            Divider()
+            
+            Section {
+                NearbyBusinessToggle(isOn: $nearbyLocation)
+                OnlyOpenStoreToggle(isOn: $onlyOpenStore)
+                SortByPicker(
+                    selection: $selectedSortOption,
+                    sortOptions: viewModel.viewState.sortOptions
+                )
+                PriceSelector(selectedPrice: $selectedPrice)
+            }
+            
             Spacer()
+            
+            Divider()
+                        
+            HStack {
+                Spacer()
+                
+                Button("Cancel") {
+                    isShow = false
+                }
+                .padding()
+                
+                Button("Apply") {
+                    // Apply the selected filter options
+                    isShow = false
+                }
+                .padding()
+            }
         }
         .onAppear {
             selectedSortOption = viewModel.viewState.selectedSortOption!

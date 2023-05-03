@@ -38,8 +38,9 @@ struct HomeView: View {
             }
         }
         .sheet(isPresented: $showFilter) {
-            // Your filter view here
-            FilterView()
+            FilterView(
+                isShow: $showFilter
+            )
         }
         .onAppear {
             viewModel.fetchBusiness()
