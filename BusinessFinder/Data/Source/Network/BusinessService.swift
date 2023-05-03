@@ -41,7 +41,10 @@ class BusinessServiceImpl: BusinessService {
         try await self.networkManager.get(
             of: ReviewsResponse.self,
             path: "/\(id)/reviews",
-            parameters: nil
+            parameters: [
+                "limit": 20,
+                "sort_by": "yelp_sort"
+            ]
         )
     }
 }
