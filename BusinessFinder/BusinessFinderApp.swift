@@ -12,13 +12,19 @@ struct BusinessFinderApp: App {
     @StateObject private var homeViewModel: HomeViewModel
     @StateObject private var businessDetailViewModel: BusinessDetailViewModel
     @StateObject private var reviewViewModel: ReviewViewModel
+    @StateObject private var filterViewModel: FilterViewModel
     
     init() {
         let networkManager = NetworkManager.shared
         let businessService: BusinessService =
             BusinessServiceImpl(networkManager: networkManager)
+        let sortOptionDao: SortOptionDao = SortOptionDaoImpl()
+        
         let businessRepository: BusinessRepository =
             BusinessRepositoryImpl(businessService: businessService)
+        let filterRepository: FilterRepostory =
+            FilterRepositoryImpl(sortOptionDao: sortOptionDao)
+        
         let getBusiness: GetBusiness =
             GetBusinessImpl(businessRepository: businessRepository)
         let getBusinessDetail: GetBusinessDetail =
@@ -29,6 +35,9 @@ struct BusinessFinderApp: App {
             SearchBusinessImpl(repository: businessRepository)
         let loadMoreBusiness: LoadMoreBusiness =
             LoadMoreBusinessImpl(businessRepository: businessRepository)
+        let getSortOption: GetSortOptions =
+            GetSortOptionsImpl(repository: filterRepository)
+        
         _homeViewModel =
             StateObject(
                 wrappedValue: HomeViewModel(
@@ -44,6 +53,9 @@ struct BusinessFinderApp: App {
             StateObject(
                 wrappedValue: ReviewViewModel(
                     getReviews: getReviews))
+        _filterViewModel = StateObject(
+            wrappedValue: FilterViewModel(
+                getSortOptions: getSortOption))
     }
     
     var body: some Scene {
@@ -52,6 +64,7 @@ struct BusinessFinderApp: App {
                 .environmentObject(homeViewModel)
                 .environmentObject(businessDetailViewModel)
                 .environmentObject(reviewViewModel)
+                .environmentObject(filterViewModel)
         }
     }
 }
