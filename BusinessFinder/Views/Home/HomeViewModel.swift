@@ -22,60 +22,24 @@ class HomeViewModel: ObservableObject {
     func fetchBusiness() {
         viewState.offset = 0
         viewState.isCanLoadMore = true
+        viewState.isLoading = true
         
-        Just(())
-            .prepend(viewState.isLoading.toggle())
-            .asyncMap {
-                try await self.getBusiness.call(
-                    location: self.viewState.location,
-                    offset: self.viewState.offset,
-                    filter: self.viewState.filters
-                )
-            }
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                self.viewState.isLoading = false
-                switch completion {
-                case .failure(let error):
-                    self.viewState.error = error
-                case .finished:
-                    break
-                }
-            } receiveValue: { data in
-                self.viewState.businesses = data
-            }
-            .store(in: &cancellables)
+        callGetBusiness { data in
+            self.viewState.isLoading = false
+            self.viewState.businesses = data
+        }
     }
     
     func fetchSearchBusiness(key: String) {
         viewState.offset = 0
         viewState.searchKey = key
         viewState.isCanLoadMore = true
+        viewState.isLoading = true
         
-        Just(())
-            .prepend(viewState.isLoading.toggle())
-            .asyncMap {
-                try await self
-                    .getBusiness
-                    .call(
-                        location: self.viewState.location,
-                        offset: self.viewState.offset,
-                        filter: self.viewState.filters
-                    )
-            }
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                self.viewState.isLoading = false
-                switch completion {
-                case .failure(let error):
-                    self.viewState.error = error
-                case .finished:
-                    break
-                }
-            } receiveValue: { data in
-                self.viewState.businesses = data
-            }
-            .store(in: &cancellables)
+        callGetBusiness { data in
+            self.viewState.isLoading = false
+            self.viewState.businesses = data
+        }
     }
     
     func loadMoreData() {
@@ -86,30 +50,13 @@ class HomeViewModel: ObservableObject {
         viewState.offset += viewState.limit
         viewState.isLoadMore = true
         
-        Just(())
-            .asyncMap {
-                try await self.getBusiness.call(
-                    location: self.viewState.location,
-                    offset: self.viewState.offset,
-                    filter: self.viewState.filters
-                )
-            }
-            .receive(on: DispatchQueue.main)
-            .sink { completion in
-                switch completion {
-                case .failure(let error):
-                    self.viewState.error = error
-                case .finished:
-                    break
-                }
-            } receiveValue: { data in
-                self.viewState
-                    .businesses
-                    .append(contentsOf: data)
-                self.viewState.isLoadMore = false
-                self.viewState.isCanLoadMore = !data.isEmpty
-            }
-            .store(in: &cancellables)
+        callGetBusiness { data in
+            self.viewState
+                .businesses
+                .append(contentsOf: data)
+            self.viewState.isLoadMore = false
+            self.viewState.isCanLoadMore = !data.isEmpty
+        }
     }
     
     func filterBusiness(
@@ -123,6 +70,32 @@ class HomeViewModel: ObservableObject {
         viewState.isOnlyOpenStore = onlyOpenStore
         viewState.selectedPrice = selectedPrice
         
-        fetchSearchBusiness(key: viewState.searchKey)
+        callGetBusiness { data in
+            self.viewState.isLoading = false
+            self.viewState.businesses = data
+        }
+    }
+    
+    private func callGetBusiness(receiveValue: @escaping (([Business]) -> Void)) {
+        Just(())
+            .asyncMap {
+                try await self.getBusiness.call(
+                    location: self.viewState.location,
+                    offset: self.viewState.offset,
+                    filter: self.viewState.filters
+                )
+            }
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    self.viewState.error = error
+                case .finished:
+                    break
+                }
+            } receiveValue: { data in
+                receiveValue(data)
+            }
+            .store(in: &cancellables)
     }
 }
