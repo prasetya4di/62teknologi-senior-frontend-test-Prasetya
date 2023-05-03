@@ -37,6 +37,10 @@ struct HomeView: View {
                 FilterToolbarButton(showFilter: $showFilter)
             }
         }
+        .sheet(isPresented: $showFilter) {
+            // Your filter view here
+            FilterView()
+        }
         .onAppear {
             viewModel.fetchBusiness()
         }
