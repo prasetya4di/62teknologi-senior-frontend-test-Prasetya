@@ -16,7 +16,9 @@ struct HomeView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            BusinessList()
+            BusinessList(
+                businesses: viewModel.viewState.businesses
+            )
         }
         .padding()
         .onAppear {

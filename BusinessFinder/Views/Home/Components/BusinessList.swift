@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct BusinessList: View {
+    let businesses: [Business]
+    
     var body: some View {
         VStack {
-            ForEach(0...5, id: \.self) { _ in
-                BusinessItem()
+            ForEach(businesses, id: \.self.id) { business in
+                BusinessItem(
+                    business: business
+                )
             }
         }
-    }
-}
-
-struct BusinessList_Previews: PreviewProvider {
-    static var previews: some View {
-        BusinessList()
     }
 }

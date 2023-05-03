@@ -9,19 +9,21 @@ import SwiftUI
 import Kingfisher
 
 struct BusinessItem: View {
+    let business: Business
+    
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                BusinessImage(imageUrl: "https://s3-media1.fl.yelpcdn.com/bphoto/igyZItx5n3TjIKDFSHzuxQ/o.jpg")
+                BusinessImage(imageUrl: business.imageUrl)
                 
                 VStack(alignment: .leading, spacing: 6) {
-                    BusinessName(name: "Barbacoa Grill")
+                    BusinessName(name: business.name)
                     HStack {
-                        BusinessRating(score: 4)
-                        BusinessReviewCount(total: 456)
+                        BusinessRating(score: business.rating)
+                        BusinessReviewCount(total: business.reviewCount)
                     }
-                    BusinessCategories(categories: ["SteakHouses", "Seafood", "Bars"])
-                    BusinessAddress(displayAddress: ["276 W Bobwhite Ct", "Boise, ID 83706"])
+                    BusinessCategories(categories: business.categoriesName)
+                    BusinessAddress(displayAddress: business.location.displayAddress)
                 }
                 
                 Spacer()
@@ -29,11 +31,5 @@ struct BusinessItem: View {
             
             Divider()
         }
-    }
-}
-
-struct BusinessItem_Previews: PreviewProvider {
-    static var previews: some View {
-        BusinessItem()
     }
 }
