@@ -18,7 +18,7 @@ struct ReviewDate: View {
     
     func parseDate(_ date: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         if let date = dateFormatter.date(from: date) {
             dateFormatter.dateFormat = "dd MMMM yyyy"
             let formattedDate = dateFormatter.string(from: date)
