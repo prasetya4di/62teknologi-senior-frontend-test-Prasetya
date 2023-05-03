@@ -40,6 +40,8 @@ struct BusinessList: View {
             if viewModel.viewState.isLoadMore {
                 ProgressView()
                     .padding()
+            } else if !viewModel.viewState.isCanLoadMore {
+                EndOfDataText()
             }
         }
     }
