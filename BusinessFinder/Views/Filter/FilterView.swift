@@ -12,22 +12,25 @@ struct FilterView: View {
     
     @State private var nearbyLocation = false
     @State private var onlyOpenStore = false
-    @State private var selectedSortOption: SortOption
+    @State private var selectedSortOption = SortOption(label: "", value: "")
+    @State private var selectedPrice = ""
     
     var body: some View {
         VStack {
             NearbyBusinessToggle(isOn: $nearbyLocation)
+            OnlyOpenStoreToggle(isOn: $onlyOpenStore)
             SortByPicker(
                 selection: $selectedSortOption,
                 sortOptions: viewModel.viewState.sortOptions
             )
-            OnlyOpenStoreToggle(isOn: $onlyOpenStore)
+            PriceSelector(selectedPrice: $selectedPrice)
             Spacer()
         }
         .onAppear {
             selectedSortOption = viewModel.viewState.selectedSortOption!
             nearbyLocation = viewModel.viewState.isNearbyLocationOn
             onlyOpenStore = viewModel.viewState.isOnlyOpenStore
+            selectedPrice = viewModel.viewState.selectedPrice
         }
         .padding()
     }

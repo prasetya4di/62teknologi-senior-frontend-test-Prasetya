@@ -81,6 +81,7 @@
 		44C59AAE2A029DDC00C2C2B4 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AAD2A029DDC00C2C2B4 /* FilterViewModel.swift */; };
 		44C59AB02A029DE500C2C2B4 /* FilterViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AAF2A029DE500C2C2B4 /* FilterViewState.swift */; };
 		44C59AB22A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AB12A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift */; };
+		44C59AB42A02A32E00C2C2B4 /* PriceSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AB32A02A32E00C2C2B4 /* PriceSelector.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,7 @@
 		44C59AAD2A029DDC00C2C2B4 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		44C59AAF2A029DE500C2C2B4 /* FilterViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewState.swift; sourceTree = "<group>"; };
 		44C59AB12A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyOpenStoreToggle.swift; sourceTree = "<group>"; };
+		44C59AB32A02A32E00C2C2B4 /* PriceSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSelector.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				44C59AA02A02981B00C2C2B4 /* NearbyBusinessToggle.swift */,
 				44C59AA92A029A2E00C2C2B4 /* SortByPicker.swift */,
 				44C59AB12A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift */,
+				44C59AB32A02A32E00C2C2B4 /* PriceSelector.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 			files = (
 				44113B2F2A0236D90036510D /* ReviewView.swift in Sources */,
 				44C59AA62A02991300C2C2B4 /* SortOptionDao.swift in Sources */,
+				44C59AB42A02A32E00C2C2B4 /* PriceSelector.swift in Sources */,
 				44113B262A0232850036510D /* ReviewsResponse.swift in Sources */,
 				44113AF92A01DD8A0036510D /* BusinessImage.swift in Sources */,
 				44C59A952A027C4400C2C2B4 /* SearchBusiness.swift in Sources */,
