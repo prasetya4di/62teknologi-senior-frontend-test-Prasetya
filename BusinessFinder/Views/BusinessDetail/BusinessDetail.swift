@@ -17,6 +17,10 @@ struct BusinessDetail: View {
     var body: some View {
         ScrollView {
             VStack {
+                if viewModel.viewState.isLoading {
+                    BusinessDetailLoading()
+                }
+                
                 if let business = viewModel.viewState.business {
                     BusinessInformation(business: business)
                 }
@@ -24,7 +28,6 @@ struct BusinessDetail: View {
                 ReviewView(id: id)
                     .padding(.horizontal)
             }
-            .padding(.horizontal)
         }
         .onAppear {
             viewModel.fetchBusinessDetail(id: id)
