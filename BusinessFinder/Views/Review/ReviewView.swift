@@ -11,7 +11,15 @@ struct ReviewView: View {
     let review: [Review]
     
     var body: some View {
-        ReviewList(review: review)
+        VStack(alignment: .leading) {
+            Text("Reviews")
+                .font(.title)
+                .fontWeight(.bold)
+            
+            Divider()
+            
+            ReviewList(review: review)
+        }
     }
 }
 

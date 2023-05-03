@@ -11,6 +11,7 @@ import SwiftUI
 struct BusinessFinderApp: App {
     @StateObject private var homeViewModel: HomeViewModel
     @StateObject private var businessDetailViewModel: BusinessDetailViewModel
+    @StateObject private var reviewViewModel: ReviewViewModel
     
     init() {
         let networkManager = NetworkManager.shared
@@ -22,10 +23,14 @@ struct BusinessFinderApp: App {
             GetBusinessImpl(businessRepository: businessRepository)
         let getBusinessDetail: GetBusinessDetail =
             GetBusinessDetailImpl(businessRepository: businessRepository)
+        let getReviews: GetBusinessReviews =
+            GetBusinessReviewsImpl(businessRepository: businessRepository)
         _homeViewModel =
             StateObject(wrappedValue: HomeViewModel(getBusiness: getBusiness))
         _businessDetailViewModel =
             StateObject(wrappedValue: BusinessDetailViewModel(getBusinessDetail: getBusinessDetail))
+        _reviewViewModel =
+            StateObject(wrappedValue: ReviewViewModel(getReviews: getReviews))
     }
     
     var body: some Scene {
@@ -33,6 +38,7 @@ struct BusinessFinderApp: App {
             ContentView()
                 .environmentObject(homeViewModel)
                 .environmentObject(businessDetailViewModel)
+                .environmentObject(reviewViewModel)
         }
     }
 }
