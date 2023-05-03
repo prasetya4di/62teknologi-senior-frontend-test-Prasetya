@@ -33,7 +33,7 @@ class BusinessServiceImpl: BusinessService {
     }
     
     func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse {
-        return try await self.networkManager.get(
+        try await self.networkManager.get(
             of: BusinessResponse.self,
             path: "/search",
             parameters: [

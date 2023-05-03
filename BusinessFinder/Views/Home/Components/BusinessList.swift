@@ -10,8 +10,10 @@ import SwiftUI
 struct BusinessList: View {
     let businesses: [Business]
     
+    @EnvironmentObject private var viewModel: HomeViewModel
+    
     var body: some View {
-        VStack {
+        LazyVStack {
             ForEach(businesses, id: \.self.id) { business in
                 NavigationLink {
                     BusinessDetail(
@@ -22,8 +24,21 @@ struct BusinessList: View {
                     BusinessItem(
                         business: business
                     )
+                    .onAppear {
+                        guard business == businesses.last
+                                && !viewModel.viewState.isLoadMore else {
+                            return
+                        }
+                        
+                        viewModel.loadMoreData()
+                    }
                 }
                 .buttonStyle(.plain)
+            }
+            
+            if viewModel.viewState.isLoadMore {
+                ProgressView()
+                    .padding()
             }
         }
     }
