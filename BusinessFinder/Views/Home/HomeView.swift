@@ -11,6 +11,7 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
     
     @State private var searchText = ""
+    @State private var showFilter = false
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -31,6 +32,11 @@ struct HomeView: View {
         }
         .navigationTitle("Business")
         .padding(.horizontal)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                FilterToolbarButton(showFilter: $showFilter)
+            }
+        }
         .onAppear {
             viewModel.fetchBusiness()
         }
