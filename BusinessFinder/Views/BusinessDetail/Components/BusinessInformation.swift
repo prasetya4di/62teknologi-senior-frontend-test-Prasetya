@@ -50,7 +50,11 @@ struct BusinessInformation: View {
                 
                 Divider()
                 
-                DetailActions(phoneNumber: business.phone, location: business.locationCoordinate, url: business.url)
+                DetailActions(
+                    phoneNumber: business.phone,
+                    name: business.name,
+                    location: business.locationCoordinate,
+                    url: business.url)
                 
                 Divider()
                 
