@@ -9,6 +9,7 @@ import Alamofire
 
 protocol BusinessRepository {
     func getBusiness(location: String) async throws -> BusinessResponse
+    func getBusiness(location: String, term: String) async throws -> BusinessResponse
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse
     func getBusinessReview(id: String) async throws -> ReviewsResponse
 }
@@ -22,6 +23,10 @@ class BusinessRepositoryImpl: BusinessRepository {
     
     func getBusiness(location: String) async throws -> BusinessResponse {
         try await businessService.getBusiness(location: location)
+    }
+    
+    func getBusiness(location: String, term: String) async throws -> BusinessResponse {
+        try await businessService.getBusiness(location: location, term: term)
     }
     
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse {
