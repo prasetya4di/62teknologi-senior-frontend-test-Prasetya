@@ -13,7 +13,7 @@ struct BusinessDetail: View {
     var body: some View {
         ScrollView {
             DetailImageCover(imageUrl: business.imageUrl)
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading) {
                 HStack {
                     BusinessDetailName(name: business.name)
                     Spacer()
@@ -32,10 +32,19 @@ struct BusinessDetail: View {
                     
                     BusinessCategories(categories: business.categoriesName)
                 }
+                .padding(.top, -16)
                 
                 if let hours = business.hours.first {
                     DetailOpenHour(businessHours: hours)
                 }
+                
+                Divider()
+                
+                DetailActions(phoneNumber: business.phone, location: business.locationCoordinate, url: business.url)
+                
+                Divider()
+                
+                DetailMap(coordinate: business.locationCoordinate)
                 
                 Divider()
             }

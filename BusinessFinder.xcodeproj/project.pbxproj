@@ -41,6 +41,9 @@
 		44113B182A021C170036510D /* BusinessDetailName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B172A021C170036510D /* BusinessDetailName.swift */; };
 		44113B1A2A021D660036510D /* DetailPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B192A021D660036510D /* DetailPrice.swift */; };
 		44113B1C2A02225C0036510D /* DetailOpenHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B1B2A02225C0036510D /* DetailOpenHour.swift */; };
+		44113B1E2A0226520036510D /* DetailMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B1D2A0226520036510D /* DetailMap.swift */; };
+		44113B202A0227800036510D /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B1F2A0227800036510D /* IconButton.swift */; };
+		44113B222A0228710036510D /* DetailActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B212A0228710036510D /* DetailActions.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +83,9 @@
 		44113B172A021C170036510D /* BusinessDetailName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailName.swift; sourceTree = "<group>"; };
 		44113B192A021D660036510D /* DetailPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPrice.swift; sourceTree = "<group>"; };
 		44113B1B2A02225C0036510D /* DetailOpenHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailOpenHour.swift; sourceTree = "<group>"; };
+		44113B1D2A0226520036510D /* DetailMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMap.swift; sourceTree = "<group>"; };
+		44113B1F2A0227800036510D /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		44113B212A0228710036510D /* DetailActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActions.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +286,9 @@
 				44113B172A021C170036510D /* BusinessDetailName.swift */,
 				44113B192A021D660036510D /* DetailPrice.swift */,
 				44113B1B2A02225C0036510D /* DetailOpenHour.swift */,
+				44113B1D2A0226520036510D /* DetailMap.swift */,
+				44113B1F2A0227800036510D /* IconButton.swift */,
+				44113B212A0228710036510D /* DetailActions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -418,6 +427,7 @@
 				44113B012A01E0B40036510D /* BusinessCategories.swift in Sources */,
 				44113AD72A00FEBF0036510D /* BusinessResponse.swift in Sources */,
 				44113AF72A01DCEF0036510D /* BusinessItem.swift in Sources */,
+				44113B222A0228710036510D /* DetailActions.swift in Sources */,
 				44113B052A01E3D00036510D /* BusinessList.swift in Sources */,
 				44113AF52A01DB580036510D /* HomeView.swift in Sources */,
 				44113AE82A0165E80036510D /* BusinessRepository.swift in Sources */,
@@ -435,8 +445,10 @@
 				44113AE12A0165210036510D /* BusinessCoordinate.swift in Sources */,
 				44113B032A01E2B60036510D /* BusinessAddress.swift in Sources */,
 				44113ADD2A0164D10036510D /* Business.swift in Sources */,
+				44113B1E2A0226520036510D /* DetailMap.swift in Sources */,
 				44113AE32A0165450036510D /* BusinessLocation.swift in Sources */,
 				44113AFF2A01E0640036510D /* BusinessReviewCount.swift in Sources */,
+				44113B202A0227800036510D /* IconButton.swift in Sources */,
 				44113AFD2A01DE5F0036510D /* BusinessRating.swift in Sources */,
 				44113AC02A00F90C0036510D /* BusinessFinderApp.swift in Sources */,
 			);
