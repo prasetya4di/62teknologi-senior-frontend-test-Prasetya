@@ -12,6 +12,7 @@ struct HomeViewState: Equatable {
     var isLoadMore = false
     var isNearbyLocationOn = false
     var isOnlyOpenStore = false
+    var isCanLoadMore = true
     var selectedPrice: String = ""
     var selectedSortOption: SortOption?
     var businesses: [Business]

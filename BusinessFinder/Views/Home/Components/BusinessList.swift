@@ -26,7 +26,8 @@ struct BusinessList: View {
                     )
                     .onAppear {
                         guard business == businesses.last
-                                && !viewModel.viewState.isLoadMore else {
+                                && !viewModel.viewState.isLoadMore
+                                && viewModel.viewState.isCanLoadMore else {
                             return
                         }
                         

@@ -23,6 +23,7 @@ class HomeViewModel: ObservableObject {
     
     func fetchBusiness() {
         viewState.offset = 0
+        viewState.isCanLoadMore = true
         
         Just(())
             .prepend(viewState.isLoading.toggle())
@@ -50,6 +51,7 @@ class HomeViewModel: ObservableObject {
     func fetchSearchBusiness(key: String) {
         viewState.offset = 0
         viewState.searchKey = key
+        viewState.isCanLoadMore = true
         
         Just(())
             .prepend(viewState.isLoading.toggle())
@@ -102,10 +104,10 @@ class HomeViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { data in
-                self
-                    .viewState
+                self.viewState
                     .businesses
                     .append(contentsOf: data)
+                self.viewState.isCanLoadMore = !data.isEmpty
             }
             .store(in: &cancellables)
     }
