@@ -20,10 +20,11 @@ class FilterViewModel: ObservableObject {
     
     func getAllSortOptions() {
         viewState.sortOptions = getSortOptions.call()
+        viewState.selectedSortOption = viewState.sortOptions.first!
     }
     
-    func toggleNearbyLocation() {
-        viewState.isNearbyLocationOn.toggle()
+    func toggleNearbyLocation(_ isEnable: Bool) {
+        viewState.isNearbyLocationOn = isEnable
     }
     
     func changePrice(selected: String) {
@@ -34,7 +35,7 @@ class FilterViewModel: ObservableObject {
         viewState.selectedSortOption = sortOption
     }
     
-    func toggleIsOpen() {
-        viewState.isOnlyOpenStore.toggle()
+    func toggleIsOpen(_ isOpen: Bool) {
+        viewState.isOnlyOpenStore = isOpen
     }
 }
