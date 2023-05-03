@@ -8,6 +8,7 @@
 import Foundation
 
 struct HomeViewState: Equatable {
+    var isLoading = false
     var businesses: [Business]
     var error: Error? = nil
     
@@ -21,6 +22,7 @@ struct HomeViewState: Equatable {
     
     static func == (lhs: HomeViewState, rhs: HomeViewState) -> Bool {
         return lhs.businesses == rhs.businesses
+        && lhs.isLoading == rhs.isLoading
         && lhs.error?.localizedDescription == rhs.error?.localizedDescription
     }
 }

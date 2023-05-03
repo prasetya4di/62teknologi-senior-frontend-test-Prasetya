@@ -21,19 +21,22 @@ class HomeViewModel: ObservableObject {
     
     func fetchBusiness() {
         Just(())
-        .asyncMap {
-            try await self.getBusiness.call()
-        }
-        .sink { completion in
-            switch completion {
-            case .failure(let error):
-                self.viewState.error = error
-            case .finished:
-                break
+            .prepend(viewState.isLoading.toggle())
+            .asyncMap {
+                try await self.getBusiness.call()
             }
-        } receiveValue: { data in
-            self.viewState.businesses = data
-        }
-        .store(in: &cancellables)
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                self.viewState.isLoading = false
+                switch completion {
+                case .failure(let error):
+                    self.viewState.error = error
+                case .finished:
+                    break
+                }
+            } receiveValue: { data in
+                self.viewState.businesses = data
+            }
+            .store(in: &cancellables)
     }
 }
