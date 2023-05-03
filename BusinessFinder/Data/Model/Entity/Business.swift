@@ -24,6 +24,8 @@ struct Business: Equatable {
     let phone: String
     let displayPhone: String
     let distance: Double?
+    let photos: [String]
+    let hours: [BusinessHours]
     
     var categoriesName: [String] {
         categories.map { $0.title }
@@ -53,6 +55,8 @@ struct Business: Equatable {
         phone = response.phone
         displayPhone = response.displayPhone
         distance = response.distance
+        photos = []
+        hours = []
     }
     
     init(
@@ -71,23 +75,28 @@ struct Business: Equatable {
         location: BusinessLocation,
         phone: String,
         displayPhone: String,
-        distance: Double?) {
-            self.id = id
-            self.alias = alias
-            self.name = name
-            self.imageUrl = imageUrl
-            self.isClosed = isClosed
-            self.url = url
-            self.reviewCount = reviewCount
-            self.categories = categories
-            self.rating = rating
-            self.coordinates = coordinates
-            self.transactions = transactions
-            self.price = price
-            self.location = location
-            self.phone = phone
-            self.displayPhone = displayPhone
-            self.distance = distance
+        distance: Double?,
+        photos: [String],
+        hours: [BusinessHours]
+    ) {
+        self.id = id
+        self.alias = alias
+        self.name = name
+        self.imageUrl = imageUrl
+        self.isClosed = isClosed
+        self.url = url
+        self.reviewCount = reviewCount
+        self.categories = categories
+        self.rating = rating
+        self.coordinates = coordinates
+        self.transactions = transactions
+        self.price = price
+        self.location = location
+        self.phone = phone
+        self.displayPhone = displayPhone
+        self.distance = distance
+        self.photos = photos
+        self.hours = hours
     }
     
     static func == (lhs: Business, rhs: Business) -> Bool {
@@ -103,5 +112,6 @@ struct Business: Equatable {
         && lhs.price == rhs.price
         && lhs.phone == rhs.phone
         && lhs.displayPhone == rhs.displayPhone
+        && lhs.photos == rhs.photos
     }
 }

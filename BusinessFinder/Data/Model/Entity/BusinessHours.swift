@@ -15,6 +15,12 @@ struct BusinessHours {
         open = response.open.map { BusinessOpen(response: $0) }
         isOpenNow = response.isOpenNow
     }
+    
+    init(hourType: String, open: [BusinessOpen], isOpenNow: Bool) {
+        self.hourType = hourType
+        self.open = open
+        self.isOpenNow = isOpenNow
+    }
 }
 
 struct BusinessOpen {
@@ -28,5 +34,12 @@ struct BusinessOpen {
         start = response.start
         end = response.end
         isOvernight = response.isOvernight
+    }
+    
+    init(day: Int, start: String, end: String, isOvernight: Bool) {
+        self.day = day
+        self.start = start
+        self.end = end
+        self.isOvernight = isOvernight
     }
 }

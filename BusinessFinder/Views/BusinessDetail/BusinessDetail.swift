@@ -11,7 +11,11 @@ struct BusinessDetail: View {
     let business: Business
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                Text("Detail")
+            }
+        }
     }
 }
 
@@ -49,7 +53,62 @@ struct BusinessDetail_Previews: PreviewProvider {
                     crossStreets: nil),
                 phone: "+12083385000",
                 displayPhone: "(208) 338-5000",
-                distance: 5061.886989832781)
+                distance: 5061.886989832781,
+                photos: [
+                    "https://s3-media1.fl.yelpcdn.com/bphoto/igyZItx5n3TjIKDFSHzuxQ/o.jpg",
+                    "https://s3-media1.fl.yelpcdn.com/bphoto/ZBsZDtc8Kyx1GKfPRE31UA/o.jpg",
+                    "https://s3-media4.fl.yelpcdn.com/bphoto/PeWh0FHtrOdgQkgOmwAhhw/o.jpg"
+                ],
+                hours: [
+                    BusinessHours(
+                        hourType: "Regular",
+                        open: [
+                            BusinessOpen(
+                                day: 0,
+                                start: "1600",
+                                end: "2000",
+                                isOvernight: false
+                            ),
+                            BusinessOpen(
+                                day: 1,
+                                start: "1600",
+                                end: "2000",
+                                isOvernight: false
+                            ),
+                            BusinessOpen(
+                                day: 2,
+                                start: "1600",
+                                end: "2000",
+                                isOvernight: false
+                            ),
+                            BusinessOpen(
+                                day: 3,
+                                start: "1600",
+                                end: "2000",
+                                isOvernight: false
+                            ),
+                            BusinessOpen(
+                                day: 4,
+                                start: "1600",
+                                end: "0100",
+                                isOvernight: true
+                            ),
+                            BusinessOpen(
+                                day: 5,
+                                start: "1600",
+                                end: "0100",
+                                isOvernight: true
+                            ),
+                            BusinessOpen(
+                                day: 6,
+                                start: "1600",
+                                end: "2000",
+                                isOvernight: false
+                            ),
+                        ],
+                        isOpenNow: false)
+                ]
+            )
         )
     }
 }
