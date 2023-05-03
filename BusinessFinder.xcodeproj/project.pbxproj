@@ -56,6 +56,8 @@
 		44113B382A023A8E0036510D /* ReviewText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B372A023A8E0036510D /* ReviewText.swift */; };
 		44113B3A2A023BDA0036510D /* ReviewDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B392A023BDA0036510D /* ReviewDate.swift */; };
 		44113B3C2A0242720036510D /* ReviewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B3B2A0242720036510D /* ReviewList.swift */; };
+		44113B3E2A0242E50036510D /* BusinessDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B3D2A0242E50036510D /* BusinessDetailViewModel.swift */; };
+		44113B402A0243620036510D /* BusinessDetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B3F2A0243620036510D /* BusinessDetailViewState.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		44113B372A023A8E0036510D /* ReviewText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewText.swift; sourceTree = "<group>"; };
 		44113B392A023BDA0036510D /* ReviewDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDate.swift; sourceTree = "<group>"; };
 		44113B3B2A0242720036510D /* ReviewList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewList.swift; sourceTree = "<group>"; };
+		44113B3D2A0242E50036510D /* BusinessDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewModel.swift; sourceTree = "<group>"; };
+		44113B3F2A0243620036510D /* BusinessDetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailViewState.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 			children = (
 				44113B0E2A020D7F0036510D /* Components */,
 				44113B0F2A020D960036510D /* BusinessDetail.swift */,
+				44113B3D2A0242E50036510D /* BusinessDetailViewModel.swift */,
+				44113B3F2A0243620036510D /* BusinessDetailViewState.swift */,
 			);
 			path = BusinessDetail;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				44113B052A01E3D00036510D /* BusinessList.swift in Sources */,
 				44113B362A02391E0036510D /* ReviewItem.swift in Sources */,
 				44113B382A023A8E0036510D /* ReviewText.swift in Sources */,
+				44113B3E2A0242E50036510D /* BusinessDetailViewModel.swift in Sources */,
 				44113AF52A01DB580036510D /* HomeView.swift in Sources */,
 				44113AE82A0165E80036510D /* BusinessRepository.swift in Sources */,
 				44113B1A2A021D660036510D /* DetailPrice.swift in Sources */,
@@ -494,6 +501,7 @@
 				44113B102A020D960036510D /* BusinessDetail.swift in Sources */,
 				44113B342A0238BF0036510D /* ReviewName.swift in Sources */,
 				44113AEB2A0168CC0036510D /* GetBusiness.swift in Sources */,
+				44113B402A0243620036510D /* BusinessDetailViewState.swift in Sources */,
 				44113B2C2A0234850036510D /* GetBusinessReviews.swift in Sources */,
 				44113B162A021B6E0036510D /* DetailImageCover.swift in Sources */,
 				44113AE52A0165810036510D /* BusinessHours.swift in Sources */,
