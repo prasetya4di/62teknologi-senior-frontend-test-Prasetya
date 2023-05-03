@@ -15,7 +15,7 @@ struct Business: Equatable {
     let isClosed: Bool
     let url: String
     let reviewCount: Int
-    let categories: [BusinessCategory]
+    private let categories: [BusinessCategory]
     let rating: Double
     private let coordinates: BusinessCoordinate
     let transactions: [String]
@@ -23,13 +23,16 @@ struct Business: Equatable {
     let location: BusinessLocation
     let phone: String
     let displayPhone: String
-    let distance: String?
-    let hours: [BusinessHours]
+    let distance: Double?
+    
+    var categoriesName: [String] {
+        categories.map { $0.title }
+    }
     
     var locationCoordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(
-            latitude: Double(coordinates.latitude)!,
-            longitude: Double(coordinates.longitude)!
+            latitude: coordinates.latitude,
+            longitude: coordinates.longitude
         )
     }
     
@@ -50,7 +53,6 @@ struct Business: Equatable {
         phone = response.phone
         displayPhone = response.displayPhone
         distance = response.distance
-        hours = response.hours.map { BusinessHours(response: $0) }
         
     }
     
