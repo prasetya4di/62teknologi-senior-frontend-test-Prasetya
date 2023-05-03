@@ -28,9 +28,7 @@ struct HomeView: View {
                     if viewModel.viewState.businesses.isEmpty {
                         EmptyBusinessText()
                     } else {
-                        BusinessList(
-                            businesses: viewModel.viewState.businesses
-                        )
+                        BusinessList()
                     }
                 }
             }

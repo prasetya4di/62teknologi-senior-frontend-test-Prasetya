@@ -14,11 +14,9 @@ class HomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     private let getBusiness: GetBusiness
-    private let loadMoreBusiness: LoadMoreBusiness
     
-    init(getBusiness: GetBusiness, loadMoreBusiness: LoadMoreBusiness) {
+    init(getBusiness: GetBusiness) {
         self.getBusiness = getBusiness
-        self.loadMoreBusiness = loadMoreBusiness
     }
     
     func fetchBusiness() {
@@ -30,6 +28,7 @@ class HomeViewModel: ObservableObject {
             .asyncMap {
                 try await self.getBusiness.call(
                     location: self.viewState.location,
+                    offset: self.viewState.offset,
                     filter: self.viewState.filters
                 )
             }
@@ -60,6 +59,7 @@ class HomeViewModel: ObservableObject {
                     .getBusiness
                     .call(
                         location: self.viewState.location,
+                        offset: self.viewState.offset,
                         filter: self.viewState.filters
                     )
             }
@@ -84,11 +84,11 @@ class HomeViewModel: ObservableObject {
         }
         
         viewState.offset += viewState.limit
+        viewState.isLoadMore = true
         
         Just(())
-            .prepend(viewState.isLoadMore.toggle())
             .asyncMap {
-                try await self.loadMoreBusiness.call(
+                try await self.getBusiness.call(
                     location: self.viewState.location,
                     offset: self.viewState.offset,
                     filter: self.viewState.filters

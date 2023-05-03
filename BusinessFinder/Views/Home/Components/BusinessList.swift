@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct BusinessList: View {
-    let businesses: [Business]
     
     @EnvironmentObject private var viewModel: HomeViewModel
     
+    private var businesses: [Business] {
+        viewModel.viewState.businesses
+    }
+    
     var body: some View {
         LazyVStack {
-            ForEach(businesses, id: \.self.id) { business in
+            ForEach(businesses, id: \.id) { business in
                 NavigationLink {
                     BusinessDetail(
                         id: business.id,

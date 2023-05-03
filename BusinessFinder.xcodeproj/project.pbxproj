@@ -70,7 +70,6 @@
 		44C59A972A02812800C2C2B4 /* FilterToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59A962A02812800C2C2B4 /* FilterToolbarButton.swift */; };
 		44C59A992A02824B00C2C2B4 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59A982A02824B00C2C2B4 /* FilterView.swift */; };
 		44C59A9D2A02879E00C2C2B4 /* CountryOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59A9C2A02879E00C2C2B4 /* CountryOption.swift */; };
-		44C59A9F2A028E5B00C2C2B4 /* LoadMoreBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59A9E2A028E5B00C2C2B4 /* LoadMoreBusiness.swift */; };
 		44C59AA12A02981B00C2C2B4 /* NearbyBusinessToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA02A02981B00C2C2B4 /* NearbyBusinessToggle.swift */; };
 		44C59AA32A0298B100C2C2B4 /* SortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA22A0298B100C2C2B4 /* SortOption.swift */; };
 		44C59AA62A02991300C2C2B4 /* SortOptionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AA52A02991300C2C2B4 /* SortOptionDao.swift */; };
@@ -152,7 +151,6 @@
 		44C59A962A02812800C2C2B4 /* FilterToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterToolbarButton.swift; sourceTree = "<group>"; };
 		44C59A982A02824B00C2C2B4 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		44C59A9C2A02879E00C2C2B4 /* CountryOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryOption.swift; sourceTree = "<group>"; };
-		44C59A9E2A028E5B00C2C2B4 /* LoadMoreBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreBusiness.swift; sourceTree = "<group>"; };
 		44C59AA02A02981B00C2C2B4 /* NearbyBusinessToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyBusinessToggle.swift; sourceTree = "<group>"; };
 		44C59AA22A0298B100C2C2B4 /* SortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOption.swift; sourceTree = "<group>"; };
 		44C59AA52A02991300C2C2B4 /* SortOptionDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOptionDao.swift; sourceTree = "<group>"; };
@@ -311,7 +309,6 @@
 				44113AEA2A0168CC0036510D /* GetBusiness.swift */,
 				44113B132A0218DA0036510D /* GetBusinessDetail.swift */,
 				44113B2B2A0234850036510D /* GetBusinessReviews.swift */,
-				44C59A9E2A028E5B00C2C2B4 /* LoadMoreBusiness.swift */,
 				44C59AAB2A029D4B00C2C2B4 /* GetSortOptions.swift */,
 			);
 			path = Domain;
@@ -629,7 +626,6 @@
 				44113ADF2A0164FD0036510D /* BusinessCategory.swift in Sources */,
 				44113B182A021C170036510D /* BusinessDetailName.swift in Sources */,
 				44113AD92A0102A60036510D /* BusinessService.swift in Sources */,
-				44C59A9F2A028E5B00C2C2B4 /* LoadMoreBusiness.swift in Sources */,
 				44113AFB2A01DE1F0036510D /* BusinessName.swift in Sources */,
 				44C59AA82A0299A400C2C2B4 /* FilterRepository.swift in Sources */,
 				44113B442A02460B0036510D /* ReviewViewState.swift in Sources */,

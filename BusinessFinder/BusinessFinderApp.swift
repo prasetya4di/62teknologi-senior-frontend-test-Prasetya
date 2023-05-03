@@ -31,16 +31,13 @@ struct BusinessFinderApp: App {
             GetBusinessDetailImpl(businessRepository: businessRepository)
         let getReviews: GetBusinessReviews =
             GetBusinessReviewsImpl(businessRepository: businessRepository)
-        let loadMoreBusiness: LoadMoreBusiness =
-            LoadMoreBusinessImpl(businessRepository: businessRepository)
         let getSortOption: GetSortOptions =
             GetSortOptionsImpl(repository: filterRepository)
         
         _homeViewModel =
             StateObject(
                 wrappedValue: HomeViewModel(
-                    getBusiness: getBusiness,
-                    loadMoreBusiness: loadMoreBusiness
+                    getBusiness: getBusiness
                 ))
         _businessDetailViewModel =
             StateObject(

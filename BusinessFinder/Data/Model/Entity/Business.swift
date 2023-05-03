@@ -7,7 +7,7 @@
 
 import MapKit
 
-struct Business: Equatable {
+struct Business: Equatable, Hashable {
     let id: String
     let alias: String
     let name: String
@@ -36,6 +36,14 @@ struct Business: Equatable {
             latitude: coordinates.latitude,
             longitude: coordinates.longitude
         )
+    }
+    
+    var identifier: String {
+        return id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        return hasher.combine(identifier)
     }
     
     init(response: BusinessResponseData) {
