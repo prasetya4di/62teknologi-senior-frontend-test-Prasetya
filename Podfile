@@ -7,5 +7,6 @@ target 'BusinessFinder' do
 
   # Pods for BusinessFinder
   pod 'Alamofire'
+  pod 'Kingfisher', '~> 7.0'
 
 end
