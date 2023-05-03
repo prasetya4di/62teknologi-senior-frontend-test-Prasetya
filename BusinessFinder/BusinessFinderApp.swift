@@ -25,12 +25,21 @@ struct BusinessFinderApp: App {
             GetBusinessDetailImpl(businessRepository: businessRepository)
         let getReviews: GetBusinessReviews =
             GetBusinessReviewsImpl(businessRepository: businessRepository)
+        let searchBusiness: SearchBusiness =
+            SearchBusinessImpl(repository: businessRepository)
         _homeViewModel =
-            StateObject(wrappedValue: HomeViewModel(getBusiness: getBusiness))
+            StateObject(
+                wrappedValue: HomeViewModel(
+                    getBusiness: getBusiness,
+                    searchBusiness: searchBusiness))
         _businessDetailViewModel =
-            StateObject(wrappedValue: BusinessDetailViewModel(getBusinessDetail: getBusinessDetail))
+            StateObject(
+                wrappedValue: BusinessDetailViewModel(
+                    getBusinessDetail: getBusinessDetail))
         _reviewViewModel =
-            StateObject(wrappedValue: ReviewViewModel(getReviews: getReviews))
+            StateObject(
+                wrappedValue: ReviewViewModel(
+                    getReviews: getReviews))
     }
     
     var body: some Scene {

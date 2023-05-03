@@ -15,15 +15,12 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("Business")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
                 
                 if viewModel.viewState.isLoading {
                     HomeLoading()
                 } else {
                     SearchTextField(text: $searchText) {
-                       
+                        viewModel.fetchSearchBusiness(key: searchText)
                     }
                     
                     BusinessList(
@@ -32,6 +29,7 @@ struct HomeView: View {
                 }
             }
         }
+        .navigationTitle("Business")
         .padding()
         .onAppear {
             viewModel.fetchBusiness()

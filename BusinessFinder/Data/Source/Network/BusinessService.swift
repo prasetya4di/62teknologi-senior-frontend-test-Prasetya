@@ -27,17 +27,19 @@ class BusinessServiceImpl: BusinessService {
             of: BusinessResponse.self,
             path: "/search",
             parameters: [
-                "location": location
+                "location": location,
+                "sort_by": "best_match"
             ])
     }
     
     func getBusiness(location: String, term: String) async throws -> BusinessResponse {
-        try await self.networkManager.get(
+        return try await self.networkManager.get(
             of: BusinessResponse.self,
             path: "/search",
             parameters: [
                 "term": term,
-                "location": location
+                "location": location,
+                "sort_by": "best_match"
             ])
     }
     

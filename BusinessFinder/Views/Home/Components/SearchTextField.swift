@@ -41,23 +41,21 @@ struct SearchTextField: View {
                         }
                     }
                 )
-                .padding(.horizontal, 10)
                 .onTapGesture {
                     self.isEditing = true
                 }
 
             if isEditing {
                 Button {
+                    onSearch()
+                    
                     withAnimation {
                         self.isEditing = false
                         self.text = ""
-                        
-                        onSearch()
                     }
                 } label: {
                     Text("Search")
                 }
-                .padding(.trailing, 10)
                 .transition(.move(edge: .trailing))
             }
         }

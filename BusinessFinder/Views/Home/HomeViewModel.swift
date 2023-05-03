@@ -14,9 +14,11 @@ class HomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     private let getBusiness: GetBusiness
+    private let searchBusiness: SearchBusiness
     
-    init(getBusiness: GetBusiness) {
+    init(getBusiness: GetBusiness, searchBusiness: SearchBusiness) {
         self.getBusiness = getBusiness
+        self.searchBusiness = searchBusiness
     }
     
     func fetchBusiness() {
@@ -24,6 +26,31 @@ class HomeViewModel: ObservableObject {
             .prepend(viewState.isLoading.toggle())
             .asyncMap {
                 try await self.getBusiness.call()
+            }
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                self.viewState.isLoading = false
+                switch completion {
+                case .failure(let error):
+                    self.viewState.error = error
+                case .finished:
+                    break
+                }
+            } receiveValue: { data in
+                self.viewState.businesses = data
+            }
+            .store(in: &cancellables)
+    }
+    
+    func fetchSearchBusiness(key: String) {
+        Just(())
+            .prepend(viewState.isLoading.toggle())
+            .asyncMap {
+                try await self
+                    .searchBusiness
+                    .call(
+                        location: Locale.current.language.region?.identifier ?? "ID",
+                        term: key)
             }
             .receive(on: DispatchQueue.main)
             .sink { completion in
