@@ -13,7 +13,7 @@ struct BusinessDetail: View {
     var body: some View {
         ScrollView {
             DetailImageCover(imageUrl: business.imageUrl)
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     BusinessDetailName(name: business.name)
                     Spacer()
@@ -23,9 +23,19 @@ struct BusinessDetail: View {
                     }
                 }
                 
-                DetailPrice(price: business.price ?? "")
-               
-                BusinessCategories(categories: business.categoriesName)
+                HStack {
+                    DetailPrice(price: business.price ?? "")
+                    
+                    Circle()
+                        .foregroundColor(.gray)
+                        .frame(width: 5, height: 5)
+                    
+                    BusinessCategories(categories: business.categoriesName)
+                }
+                
+                if let hours = business.hours.first {
+                    DetailOpenHour(businessHours: hours)
+                }
                 
                 Divider()
             }
