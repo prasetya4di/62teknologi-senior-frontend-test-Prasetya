@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
     
+    @State private var searchText = ""
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -20,6 +22,10 @@ struct HomeView: View {
                 if viewModel.viewState.isLoading {
                     HomeLoading()
                 } else {
+                    SearchTextField(text: $searchText) {
+                       
+                    }
+                    
                     BusinessList(
                         businesses: viewModel.viewState.businesses
                     )
