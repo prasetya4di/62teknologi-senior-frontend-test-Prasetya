@@ -11,7 +11,7 @@ struct Review: Equatable {
     let id: String
     let url: String
     let text: String
-    let rating: Int
+    let rating: Double
     let timeCreated: String
     let user: User
     
@@ -24,7 +24,7 @@ struct Review: Equatable {
         self.user = User(response: response.user)
     }
     
-    init(id: String, url: String, text: String, rating: Int, timeCreated: String, user: User) {
+    init(id: String, url: String, text: String, rating: Double, timeCreated: String, user: User) {
         self.id = id
         self.url = url
         self.text = text

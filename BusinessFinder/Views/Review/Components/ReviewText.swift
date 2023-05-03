@@ -13,7 +13,6 @@ struct ReviewText: View {
     var body: some View {
         Text(text)
             .font(.body)
-            .padding(.top, 6)
     }
 }
 
