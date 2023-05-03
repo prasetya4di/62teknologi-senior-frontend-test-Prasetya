@@ -31,10 +31,6 @@ class ReviewViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     self.viewState.error = error
-                    print("Error when get reviews")
-                    print(error)
-                    print(error.asAFError?.localizedDescription)
-                    print(error.localizedDescription)
                 case .finished:
                     break
                 }

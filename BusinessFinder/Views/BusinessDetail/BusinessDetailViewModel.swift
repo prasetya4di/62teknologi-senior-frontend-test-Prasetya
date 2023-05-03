@@ -31,10 +31,6 @@ class BusinessDetailViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     self.viewState.error = error
-                    print("Error when get business detail")
-                    print(error)
-                    print(error.asAFError?.localizedDescription)
-                    print(error.localizedDescription)
                 case .finished:
                     break
                 }
