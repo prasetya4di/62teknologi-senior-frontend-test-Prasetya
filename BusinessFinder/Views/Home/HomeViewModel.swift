@@ -96,7 +96,6 @@ class HomeViewModel: ObservableObject {
             }
             .receive(on: DispatchQueue.main)
             .sink { completion in
-                self.viewState.isLoadMore = false
                 switch completion {
                 case .failure(let error):
                     self.viewState.error = error
@@ -107,6 +106,7 @@ class HomeViewModel: ObservableObject {
                 self.viewState
                     .businesses
                     .append(contentsOf: data)
+                self.viewState.isLoadMore = false
                 self.viewState.isCanLoadMore = !data.isEmpty
             }
             .store(in: &cancellables)

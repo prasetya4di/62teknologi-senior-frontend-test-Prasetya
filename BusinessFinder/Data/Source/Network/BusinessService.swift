@@ -24,12 +24,10 @@ class BusinessServiceImpl: BusinessService {
     }
     
     func getBusiness(location: String, offset: Int, filter: [String: Any]) async throws -> BusinessResponse {
-        var parameters: [String: Any] = [
+        let parameters: [String: Any] = filter.merging([
             "location": location,
             "offset": offset
-        ]
-        
-        parameters.merge(filter) { first, _ in
+        ]) { first, _ in
             first
         }
         
@@ -37,13 +35,11 @@ class BusinessServiceImpl: BusinessService {
     }
     
     func getBusiness(location: CLLocation, offset: Int, filter: [String: Any]) async throws -> BusinessResponse {
-        var parameters: [String: Any] = [
+        var parameters: [String: Any] = filter.merging([
             "latitude": location.coordinate.latitude,
             "longitude": location.coordinate.longitude,
             "offset": offset
-        ]
-        
-        parameters.merge(filter) { first, _ in
+        ]) { first, _ in
             first
         }
         
@@ -71,7 +67,7 @@ class BusinessServiceImpl: BusinessService {
     }
     
     private func getBusinessResponse(parameters: [String: Any]) async throws -> BusinessResponse {
-        return try await self.networkManager.get(
+        try await self.networkManager.get(
             of: BusinessResponse.self,
             path: "/search",
             parameters: parameters)
