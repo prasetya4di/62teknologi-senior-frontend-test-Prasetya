@@ -80,6 +80,7 @@
 		44C59AAC2A029D4B00C2C2B4 /* GetSortOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AAB2A029D4B00C2C2B4 /* GetSortOptions.swift */; };
 		44C59AAE2A029DDC00C2C2B4 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AAD2A029DDC00C2C2B4 /* FilterViewModel.swift */; };
 		44C59AB02A029DE500C2C2B4 /* FilterViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AAF2A029DE500C2C2B4 /* FilterViewState.swift */; };
+		44C59AB22A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C59AB12A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,7 @@
 		44C59AAB2A029D4B00C2C2B4 /* GetSortOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSortOptions.swift; sourceTree = "<group>"; };
 		44C59AAD2A029DDC00C2C2B4 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		44C59AAF2A029DE500C2C2B4 /* FilterViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewState.swift; sourceTree = "<group>"; };
+		44C59AB12A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyOpenStoreToggle.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 			children = (
 				44C59AA02A02981B00C2C2B4 /* NearbyBusinessToggle.swift */,
 				44C59AA92A029A2E00C2C2B4 /* SortByPicker.swift */,
+				44C59AB12A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				44113AF72A01DCEF0036510D /* BusinessItem.swift in Sources */,
 				44113B242A022D4C0036510D /* DetailImageSlideCover.swift in Sources */,
 				44113B4A2A0266D60036510D /* ReviewLoading.swift in Sources */,
+				44C59AB22A02A1A900C2C2B4 /* OnlyOpenStoreToggle.swift in Sources */,
 				44113B222A0228710036510D /* DetailActions.swift in Sources */,
 				44113B4E2A0268D50036510D /* HomeLoading.swift in Sources */,
 				44113B052A01E3D00036510D /* BusinessList.swift in Sources */,

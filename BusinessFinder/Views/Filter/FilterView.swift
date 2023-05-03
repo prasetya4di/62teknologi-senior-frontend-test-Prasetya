@@ -11,6 +11,7 @@ struct FilterView: View {
     @EnvironmentObject private var viewModel: FilterViewModel
     
     @State private var nearbyLocation = false
+    @State private var onlyOpenStore = false
     @State private var selectedSortOption: SortOption
     
     var body: some View {
@@ -20,11 +21,13 @@ struct FilterView: View {
                 selection: $selectedSortOption,
                 sortOptions: viewModel.viewState.sortOptions
             )
+            OnlyOpenStoreToggle(isOn: $onlyOpenStore)
             Spacer()
         }
         .onAppear {
             selectedSortOption = viewModel.viewState.selectedSortOption!
             nearbyLocation = viewModel.viewState.isNearbyLocationOn
+            onlyOpenStore = viewModel.viewState.isOnlyOpenStore
         }
         .padding()
     }
