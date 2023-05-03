@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct SearchTextField: View {
+    @EnvironmentObject private var viewModel: HomeViewModel
     @Binding var text: String
     
     let onSearch: () -> Void
      
     @State private var isEditing = false
+    @FocusState private var focusedField: String?
     
     var body: some View {
         HStack {
             TextField("Search ...", text: $text)
+                .focused($focusedField, equals: "search")
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -30,9 +33,8 @@ struct SearchTextField: View {
                  
                         if isEditing {
                             Button {
-                                withAnimation {
-                                    self.text = ""
-                                }
+                                self.text = ""
+                                resetEditing()
                             } label: {
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(.gray)
@@ -49,15 +51,20 @@ struct SearchTextField: View {
                 Button {
                     onSearch()
                     
-                    withAnimation {
-                        self.isEditing = false
-                        self.text = ""
-                    }
+                    resetEditing()
                 } label: {
                     Text("Search")
                 }
+                .disabled(viewModel.viewState.isLoading)
                 .transition(.move(edge: .trailing))
             }
+        }
+    }
+    
+    private func resetEditing() {
+        withAnimation {
+            self.focusedField = nil
+            self.isEditing = false
         }
     }
 }

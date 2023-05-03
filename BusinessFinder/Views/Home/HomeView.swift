@@ -17,12 +17,13 @@ struct HomeView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading) {
                 
+                SearchTextField(text: $searchText) {
+                    viewModel.fetchSearchBusiness(key: searchText)
+                }
+                
                 if viewModel.viewState.isLoading {
                     HomeLoading()
                 } else {
-                    SearchTextField(text: $searchText) {
-                        viewModel.fetchSearchBusiness(key: searchText)
-                    }
                     
                     if viewModel.viewState.businesses.isEmpty {
                         EmptyBusinessText()
