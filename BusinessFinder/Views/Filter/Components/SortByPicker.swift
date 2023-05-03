@@ -18,7 +18,7 @@ struct SortByPicker: View {
             Spacer()
             Picker(selection: $selection, label: Text("")) {
                 ForEach(sortOptions) { option in
-                    Text(option.label).tag(option.value)
+                    Text(option.label).tag(option)
                 }
             }
         }
