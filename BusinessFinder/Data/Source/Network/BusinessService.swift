@@ -9,6 +9,7 @@ import Alamofire
 
 protocol BusinessService {
     func getBusiness(location: String) async throws -> BusinessResponse
+    func getBusinessDetail(id: String) async throws -> BusinessDetailResponse
 }
 
 class BusinessServiceImpl: BusinessService {
@@ -25,5 +26,13 @@ class BusinessServiceImpl: BusinessService {
             parameters: [
                 "location": location
             ])
+    }
+    
+    func getBusinessDetail(id: String) async throws -> BusinessDetailResponse {
+        try await self.networkManager.get(
+            of: BusinessDetailResponse.self,
+            path: "/\(id)",
+            parameters: nil
+        )
     }
 }
