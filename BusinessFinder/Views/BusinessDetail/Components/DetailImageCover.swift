@@ -14,7 +14,11 @@ struct DetailImageCover: View {
     var body: some View {
         KFImage(URL(string: imageUrl))
             .resizable()
-            .scaledToFit()
+            .scaledToFill()
+            .frame(
+                width: UIScreen.main.bounds.size.width,
+                height: 300)
+            .clipped()
     }
 }
 

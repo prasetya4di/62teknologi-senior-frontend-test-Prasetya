@@ -12,7 +12,14 @@ struct BusinessDetail: View {
     
     var body: some View {
         ScrollView {
-            DetailImageCover(imageUrl: business.imageUrl)
+            if business.photos.isEmpty {
+                DetailImageCover(imageUrl: business.imageUrl)
+            }
+            
+            if !business.photos.isEmpty {
+                DetailImageSlideCover(photos: business.photos)
+            }
+            
             VStack(alignment: .leading) {
                 HStack {
                     BusinessDetailName(name: business.name)

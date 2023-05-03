@@ -12,7 +12,7 @@ struct BusinessDetailName: View {
     
     var body: some View {
         Text(name)
-            .font(.title)
+            .font(.title2)
             .fontWeight(.bold)
     }
 }
