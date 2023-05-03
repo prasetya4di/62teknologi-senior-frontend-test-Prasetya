@@ -11,11 +11,10 @@ struct DetailPrice: View {
     let price: String
     
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             ForEach(1...5, id: \.self) { index in
                 Text("$")
                     .foregroundColor(index > Int(price.count) ? .gray : .black)
-                    .padding(.horizontal, -4)
             }
         }
     }
