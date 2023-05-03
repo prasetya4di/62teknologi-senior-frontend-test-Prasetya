@@ -18,8 +18,11 @@ struct ReviewItem: View {
                 Spacer()
             }
             
-            BusinessRating(score: review.rating)
-            ReviewDate(date: review.timeCreated)
+            HStack {
+                BusinessRating(score: review.rating)
+                ReviewDate(date: review.timeCreated)
+            }
+            
             ReviewText(text: review.text)
             
             Divider()
