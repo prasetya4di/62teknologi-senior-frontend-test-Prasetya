@@ -23,7 +23,7 @@ struct ReviewResponseData: Codable {
     let id: String
     let url: String
     let text: String
-    let rating: Int
+    let rating: Double
     let timeCreated: String
     let user: ReviewResponseUser
 
