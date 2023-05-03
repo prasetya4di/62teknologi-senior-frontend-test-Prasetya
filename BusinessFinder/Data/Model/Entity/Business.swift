@@ -59,6 +59,27 @@ struct Business: Equatable {
         hours = []
     }
     
+    init(response: BusinessDetailResponse) {
+        id = response.id
+        alias = response.alias
+        name = response.name
+        imageUrl = response.imageUrl
+        isClosed = response.isClosed
+        url = response.url
+        reviewCount = response.reviewCount
+        categories = response.categories.map { BusinessCategory(response: $0) }
+        rating = response.rating
+        coordinates = BusinessCoordinate(response: response.coordinates)
+        transactions = response.transactions
+        price = response.price
+        location = BusinessLocation(response: response.location)
+        phone = response.phone
+        displayPhone = response.displayPhone
+        distance = response.distance
+        photos = response.photos
+        hours = response.hours.map { BusinessHours(response: $0) }
+    }
+    
     init(
         id: String,
         alias: String,

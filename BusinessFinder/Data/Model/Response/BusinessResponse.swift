@@ -85,32 +85,6 @@ struct BusinessResponseLocation: Decodable {
     }
 }
 
-struct BusinessResponseHours: Decodable {
-    let hourType: String
-    let open: [BusinessResponseOpen]
-    let isOpenNow: Bool
-    
-    enum CodingKeys: String, CodingKey {
-        case hourType = "hour_type"
-        case open
-        case isOpenNow = "is_open_now"
-    }
-}
-
-struct BusinessResponseOpen: Decodable {
-    let day: Int
-    let start: String
-    let end: String
-    let isOvernight: Bool
-    
-    enum CodingKeys: String, CodingKey {
-        case day
-        case start
-        case end
-        case isOvernight = "is_overnight"
-    }
-}
-
 struct BusinessResponseRegion: Decodable {
     let center: BusinessResponseCenter
 }
