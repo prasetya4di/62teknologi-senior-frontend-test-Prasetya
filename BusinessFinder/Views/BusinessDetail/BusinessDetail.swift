@@ -19,10 +19,10 @@ struct BusinessDetail: View {
             VStack {
                 if viewModel.viewState.isLoading {
                     BusinessDetailLoading()
-                }
-                
-                if let business = viewModel.viewState.business {
-                    BusinessInformation(business: business)
+                } else {
+                    if let business = viewModel.viewState.business {
+                        BusinessInformation(business: business)
+                    }
                 }
                 
                 ReviewView(id: id)
