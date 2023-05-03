@@ -14,12 +14,10 @@ class HomeViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     
     private let getBusiness: GetBusiness
-    private let searchBusiness: SearchBusiness
     private let loadMoreBusiness: LoadMoreBusiness
     
-    init(getBusiness: GetBusiness, searchBusiness: SearchBusiness, loadMoreBusiness: LoadMoreBusiness) {
+    init(getBusiness: GetBusiness, loadMoreBusiness: LoadMoreBusiness) {
         self.getBusiness = getBusiness
-        self.searchBusiness = searchBusiness
         self.loadMoreBusiness = loadMoreBusiness
     }
     
@@ -29,7 +27,10 @@ class HomeViewModel: ObservableObject {
         Just(())
             .prepend(viewState.isLoading.toggle())
             .asyncMap {
-                try await self.getBusiness.call()
+                try await self.getBusiness.call(
+                    location: self.viewState.location,
+                    filter: self.viewState.filters
+                )
             }
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -48,15 +49,17 @@ class HomeViewModel: ObservableObject {
     
     func fetchSearchBusiness(key: String) {
         viewState.offset = 0
+        viewState.searchKey = key
         
         Just(())
             .prepend(viewState.isLoading.toggle())
             .asyncMap {
                 try await self
-                    .searchBusiness
+                    .getBusiness
                     .call(
                         location: self.viewState.location,
-                        term: key)
+                        filter: self.viewState.filters
+                    )
             }
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -68,7 +71,6 @@ class HomeViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { data in
-                self.viewState.searchKey = key
                 self.viewState.businesses = data
             }
             .store(in: &cancellables)
@@ -87,7 +89,8 @@ class HomeViewModel: ObservableObject {
                 try await self.loadMoreBusiness.call(
                     location: self.viewState.location,
                     offset: self.viewState.offset,
-                    term: self.viewState.searchKey)
+                    filter: self.viewState.filters
+                )
             }
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -105,5 +108,19 @@ class HomeViewModel: ObservableObject {
                     .append(contentsOf: data)
             }
             .store(in: &cancellables)
+    }
+    
+    func filterBusiness(
+        sortOption: SortOption?,
+        nearbyLocation: Bool,
+        onlyOpenStore: Bool,
+        selectedPrice: String
+    ) {
+        viewState.selectedSortOption = sortOption
+        viewState.isNearbyLocationOn = nearbyLocation
+        viewState.isOnlyOpenStore = onlyOpenStore
+        viewState.selectedPrice = selectedPrice
+        
+        fetchSearchBusiness(key: viewState.searchKey)
     }
 }

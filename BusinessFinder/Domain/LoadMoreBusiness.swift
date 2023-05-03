@@ -8,7 +8,7 @@
 import Foundation
 
 protocol LoadMoreBusiness {
-    func call(location: String, offset: Int, term: String) async throws -> [Business]
+    func call(location: String, offset: Int, filter: [String: Any]) async throws -> [Business]
 }
 
 class LoadMoreBusinessImpl: LoadMoreBusiness {
@@ -18,29 +18,14 @@ class LoadMoreBusinessImpl: LoadMoreBusiness {
         self.businessRepository = businessRepository
     }
     
-    func call(location: String, offset: Int, term: String) async throws -> [Business] {
-        try await getBusiness(location: location, offset: offset, term: term)
+    func call(location: String, offset: Int, filter: [String: Any]) async throws -> [Business] {
+        try await businessRepository
+            .getBusiness(
+                location: location,
+                offset: offset,
+                filter: filter
+            )
             .businesses
             .map { Business(response: $0)}
-    }
-    
-    private func getBusiness(
-        location: String,
-        offset: Int,
-        term: String
-    ) async throws -> BusinessResponse {
-        if term.isEmpty {
-            return try await businessRepository
-                .getBusiness(
-                    location: location,
-                    offset: offset)
-        } else {
-            return try await businessRepository
-                .getBusiness(
-                    location: location,
-                    offset: offset,
-                    term: term
-                )
-        }
     }
 }

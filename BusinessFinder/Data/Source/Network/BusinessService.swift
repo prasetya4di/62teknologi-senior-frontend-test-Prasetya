@@ -6,10 +6,11 @@
 //
 
 import Alamofire
+import CoreLocation
 
 protocol BusinessService {
-    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse
-    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse
+    func getBusiness(location: String, offset: Int, filter: [String: Any]) async throws -> BusinessResponse
+    func getBusiness(location: CLLocation, offset: Int, filter: [String: Any]) async throws -> BusinessResponse
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse
     func getBusinessReview(id: String) async throws -> ReviewsResponse
 }
@@ -22,26 +23,33 @@ class BusinessServiceImpl: BusinessService {
         self.networkManager = networkManager
     }
     
-    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse {
-        try await self.networkManager.get(
-            of: BusinessResponse.self,
-            path: "/search",
-            parameters: [
-                "location": location,
-                "offset": offset
-            ])
+    func getBusiness(location: String, offset: Int, filter: [String: Any]) async throws -> BusinessResponse {
+        var parameters: [String: Any] = [
+            "location": location,
+            "offset": offset
+        ]
+        
+        parameters.merge(filter) { first, _ in
+            first
+        }
+        
+        return try await getBusinessResponse(parameters: parameters)
     }
     
-    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse {
-        try await self.networkManager.get(
-            of: BusinessResponse.self,
-            path: "/search",
-            parameters: [
-                "term": term,
-                "location": location,
-                "offset": offset
-            ])
+    func getBusiness(location: CLLocation, offset: Int, filter: [String: Any]) async throws -> BusinessResponse {
+        var parameters: [String: Any] = [
+            "latitude": location.coordinate.latitude,
+            "longitude": location.coordinate.longitude,
+            "offset": offset
+        ]
+        
+        parameters.merge(filter) { first, _ in
+            first
+        }
+        
+        return try await getBusinessResponse(parameters: parameters)
     }
+    
     
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse {
         try await self.networkManager.get(
@@ -60,5 +68,12 @@ class BusinessServiceImpl: BusinessService {
                 "sort_by": "yelp_sort"
             ]
         )
+    }
+    
+    private func getBusinessResponse(parameters: [String: Any]) async throws -> BusinessResponse {
+        return try await self.networkManager.get(
+            of: BusinessResponse.self,
+            path: "/search",
+            parameters: parameters)
     }
 }

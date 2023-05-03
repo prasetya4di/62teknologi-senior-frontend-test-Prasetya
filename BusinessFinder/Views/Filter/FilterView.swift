@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FilterView: View {
+    @EnvironmentObject private var homeViewModel: HomeViewModel
     @EnvironmentObject private var viewModel: FilterViewModel
     
     @State private var nearbyLocation = false
@@ -48,7 +49,11 @@ struct FilterView: View {
                 .padding()
                 
                 Button("Apply") {
-                    // Apply the selected filter options
+                    homeViewModel.filterBusiness(
+                        sortOption: viewModel.viewState.selectedSortOption,
+                        nearbyLocation: viewModel.viewState.isNearbyLocationOn,
+                        onlyOpenStore: viewModel.viewState.isOnlyOpenStore,
+                        selectedPrice: viewModel.viewState.selectedPrice)
                     isShow = false
                 }
                 .padding()

@@ -6,10 +6,11 @@
 //
 
 import Alamofire
+import CoreLocation
 
 protocol BusinessRepository {
-    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse
-    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse
+    func getBusiness(location: String, offset: Int, filter: [String: Any]) async throws -> BusinessResponse
+    func getBusiness(location: CLLocation, offset: Int, filter: [String: Any]) async throws -> BusinessResponse
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse
     func getBusinessReview(id: String) async throws -> ReviewsResponse
 }
@@ -21,12 +22,12 @@ class BusinessRepositoryImpl: BusinessRepository {
         self.businessService = businessService
     }
     
-    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse {
-        try await businessService.getBusiness(location: location, offset: offset)
+    func getBusiness(location: String, offset: Int, filter: [String: Any]) async throws -> BusinessResponse {
+        try await businessService.getBusiness(location: location, offset: offset, filter: filter)
     }
     
-    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse {
-        try await businessService.getBusiness(location: location, offset: offset, term: term)
+    func getBusiness(location: CLLocation, offset: Int, filter: [String: Any]) async throws -> BusinessResponse {
+        try await businessService.getBusiness(location: location, offset: offset, filter: filter)
     }
     
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse {

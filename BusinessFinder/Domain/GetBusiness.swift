@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol GetBusiness {
-    func call() async throws -> [Business]
+    func call(location: String, filter: [String: Any]) async throws -> [Business]
 }
 
 class GetBusinessImpl: GetBusiness {
@@ -19,11 +19,12 @@ class GetBusinessImpl: GetBusiness {
         self.businessRepository = businessRepository
     }
     
-    func call() async throws -> [Business] {
+    func call(location: String, filter: [String: Any]) async throws -> [Business] {
         try await businessRepository
             .getBusiness(
-                location: Locale.current.language.region?.identifier ?? "ID",
-                offset: 0
+                location: location,
+                offset: 0,
+                filter: filter
             )
             .businesses.map { response in
                 Business(response: response)
