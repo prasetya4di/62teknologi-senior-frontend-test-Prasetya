@@ -62,6 +62,8 @@
 		44113B442A02460B0036510D /* ReviewViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B432A02460B0036510D /* ReviewViewState.swift */; };
 		44113B462A0248450036510D /* BusinessInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B452A0248450036510D /* BusinessInformation.swift */; };
 		44113B482A0264470036510D /* BusinessDetailLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B472A0264470036510D /* BusinessDetailLoading.swift */; };
+		44113B4A2A0266D60036510D /* ReviewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B492A0266D60036510D /* ReviewLoading.swift */; };
+		44113B4C2A02682D0036510D /* ReviewLoadingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B4B2A02682D0036510D /* ReviewLoadingItem.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		44113B432A02460B0036510D /* ReviewViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewState.swift; sourceTree = "<group>"; };
 		44113B452A0248450036510D /* BusinessInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInformation.swift; sourceTree = "<group>"; };
 		44113B472A0264470036510D /* BusinessDetailLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailLoading.swift; sourceTree = "<group>"; };
+		44113B492A0266D60036510D /* ReviewLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoading.swift; sourceTree = "<group>"; };
+		44113B4B2A02682D0036510D /* ReviewLoadingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoadingItem.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -359,6 +363,8 @@
 				44113B372A023A8E0036510D /* ReviewText.swift */,
 				44113B392A023BDA0036510D /* ReviewDate.swift */,
 				44113B3B2A0242720036510D /* ReviewList.swift */,
+				44113B492A0266D60036510D /* ReviewLoading.swift */,
+				44113B4B2A02682D0036510D /* ReviewLoadingItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -502,6 +508,7 @@
 				44113AD72A00FEBF0036510D /* BusinessResponse.swift in Sources */,
 				44113AF72A01DCEF0036510D /* BusinessItem.swift in Sources */,
 				44113B242A022D4C0036510D /* DetailImageSlideCover.swift in Sources */,
+				44113B4A2A0266D60036510D /* ReviewLoading.swift in Sources */,
 				44113B222A0228710036510D /* DetailActions.swift in Sources */,
 				44113B052A01E3D00036510D /* BusinessList.swift in Sources */,
 				44113B362A02391E0036510D /* ReviewItem.swift in Sources */,
@@ -535,6 +542,7 @@
 				44113AFF2A01E0640036510D /* BusinessReviewCount.swift in Sources */,
 				44113B202A0227800036510D /* IconButton.swift in Sources */,
 				44113AFD2A01DE5F0036510D /* BusinessRating.swift in Sources */,
+				44113B4C2A02682D0036510D /* ReviewLoadingItem.swift in Sources */,
 				44113AC02A00F90C0036510D /* BusinessFinderApp.swift in Sources */,
 				44113B3A2A023BDA0036510D /* ReviewDate.swift in Sources */,
 				44113B322A0237DD0036510D /* ReviewProfilePicture.swift in Sources */,

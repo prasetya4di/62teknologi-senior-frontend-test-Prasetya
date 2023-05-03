@@ -19,7 +19,11 @@ struct ReviewView: View {
             
             Divider()
             
-            ReviewList(review: viewModel.viewState.reviews)
+            if viewModel.viewState.isLoading {
+                ReviewLoading()
+            } else {
+                ReviewList(review: viewModel.viewState.reviews)
+            }
         }
         .onAppear {
             viewModel.fetchReviews(id: id)
