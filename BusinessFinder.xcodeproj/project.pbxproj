@@ -64,6 +64,8 @@
 		44113B482A0264470036510D /* BusinessDetailLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B472A0264470036510D /* BusinessDetailLoading.swift */; };
 		44113B4A2A0266D60036510D /* ReviewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B492A0266D60036510D /* ReviewLoading.swift */; };
 		44113B4C2A02682D0036510D /* ReviewLoadingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B4B2A02682D0036510D /* ReviewLoadingItem.swift */; };
+		44113B4E2A0268D50036510D /* HomeLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B4D2A0268D50036510D /* HomeLoading.swift */; };
+		44113B502A0268E40036510D /* HomeLoadingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B4F2A0268E40036510D /* HomeLoadingItem.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +128,8 @@
 		44113B472A0264470036510D /* BusinessDetailLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetailLoading.swift; sourceTree = "<group>"; };
 		44113B492A0266D60036510D /* ReviewLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoading.swift; sourceTree = "<group>"; };
 		44113B4B2A02682D0036510D /* ReviewLoadingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewLoadingItem.swift; sourceTree = "<group>"; };
+		44113B4D2A0268D50036510D /* HomeLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoading.swift; sourceTree = "<group>"; };
+		44113B4F2A0268E40036510D /* HomeLoadingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingItem.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 				44113B002A01E0B40036510D /* BusinessCategories.swift */,
 				44113B022A01E2B60036510D /* BusinessAddress.swift */,
 				44113B042A01E3D00036510D /* BusinessList.swift */,
+				44113B4D2A0268D50036510D /* HomeLoading.swift */,
+				44113B4F2A0268E40036510D /* HomeLoadingItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				44113B242A022D4C0036510D /* DetailImageSlideCover.swift in Sources */,
 				44113B4A2A0266D60036510D /* ReviewLoading.swift in Sources */,
 				44113B222A0228710036510D /* DetailActions.swift in Sources */,
+				44113B4E2A0268D50036510D /* HomeLoading.swift in Sources */,
 				44113B052A01E3D00036510D /* BusinessList.swift in Sources */,
 				44113B362A02391E0036510D /* ReviewItem.swift in Sources */,
 				44113B382A023A8E0036510D /* ReviewText.swift in Sources */,
@@ -546,6 +553,7 @@
 				44113AC02A00F90C0036510D /* BusinessFinderApp.swift in Sources */,
 				44113B3A2A023BDA0036510D /* ReviewDate.swift in Sources */,
 				44113B322A0237DD0036510D /* ReviewProfilePicture.swift in Sources */,
+				44113B502A0268E40036510D /* HomeLoadingItem.swift in Sources */,
 				44113B482A0264470036510D /* BusinessDetailLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

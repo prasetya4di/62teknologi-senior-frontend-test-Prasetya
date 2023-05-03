@@ -17,9 +17,13 @@ struct HomeView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
-                BusinessList(
-                    businesses: viewModel.viewState.businesses
-                )
+                if viewModel.viewState.isLoading {
+                    HomeLoading()
+                } else {
+                    BusinessList(
+                        businesses: viewModel.viewState.businesses
+                    )
+                }
             }
         }
         .padding()
