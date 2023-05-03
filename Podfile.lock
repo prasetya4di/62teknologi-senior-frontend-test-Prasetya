@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Kingfisher (7.6.2)
+  - SwiftUI-Shimmer (1.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher (~> 7.0)
+  - SwiftUI-Shimmer (from `https://github.com/markiv/SwiftUI-Shimmer.git`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+
+EXTERNAL SOURCES:
+  SwiftUI-Shimmer:
+    :git: https://github.com/markiv/SwiftUI-Shimmer.git
+
+CHECKOUT OPTIONS:
+  SwiftUI-Shimmer:
+    :commit: 17b66b0e7d94d2d3f220bbcb021b5026436f06c7
+    :git: https://github.com/markiv/SwiftUI-Shimmer.git
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  SwiftUI-Shimmer: 5f3012256166d42a3c5bdfdd71a3c5fc02ba81dc
+
+PODFILE CHECKSUM: c0ce90c0e5d51a9ac7ee1399274b783b5f0eadaf
+
+COCOAPODS: 1.12.1
