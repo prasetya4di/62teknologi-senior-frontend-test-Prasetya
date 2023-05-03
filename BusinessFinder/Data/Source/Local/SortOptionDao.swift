@@ -8,11 +8,11 @@
 import Foundation
 
 protocol SortOptionDao {
-    func getAllSortOption() -> [SortOption]
+    func getSortOptions() -> [SortOption]
 }
 
 class SortOptionDaoImpl: SortOptionDao {
-    func getAllSortOption() -> [SortOption] {
+    func getSortOptions() -> [SortOption] {
         [
             SortOption(label: "Best Match", value: "best_match"),
             SortOption(label: "Rating", value: "rating"),

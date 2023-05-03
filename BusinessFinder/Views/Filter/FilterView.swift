@@ -13,6 +13,7 @@ struct FilterView: View {
     var body: some View {
         VStack {
             NearbyBusinessToggle(isOn: $nearbyLocation)
+            Spacer()
         }
         .padding()
     }
