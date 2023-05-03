@@ -8,5 +8,6 @@ target 'BusinessFinder' do
   # Pods for BusinessFinder
   pod 'Alamofire'
   pod 'Kingfisher', '~> 7.0'
+  pod 'SwiftUI-Shimmer', :git => 'https://github.com/markiv/SwiftUI-Shimmer.git'
 
 end
