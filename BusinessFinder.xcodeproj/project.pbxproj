@@ -28,6 +28,7 @@
 		44113AFB2A01DE1F0036510D /* BusinessName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AFA2A01DE1F0036510D /* BusinessName.swift */; };
 		44113AFD2A01DE5F0036510D /* BusinessRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AFC2A01DE5F0036510D /* BusinessRating.swift */; };
 		44113AFF2A01E0640036510D /* BusinessReviewCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113AFE2A01E0640036510D /* BusinessReviewCount.swift */; };
+		44113B012A01E0B40036510D /* BusinessCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44113B002A01E0B40036510D /* BusinessCategories.swift */; };
 		52786D84BAD3BA04D95281E7 /* Pods_BusinessFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		44113AFA2A01DE1F0036510D /* BusinessName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessName.swift; sourceTree = "<group>"; };
 		44113AFC2A01DE5F0036510D /* BusinessRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRating.swift; sourceTree = "<group>"; };
 		44113AFE2A01E0640036510D /* BusinessReviewCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessReviewCount.swift; sourceTree = "<group>"; };
+		44113B002A01E0B40036510D /* BusinessCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCategories.swift; sourceTree = "<group>"; };
 		8B7844A22E304F728A0B95A9 /* Pods-BusinessFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.release.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.release.xcconfig"; sourceTree = "<group>"; };
 		B5AC831E98DB3557E73CEBD3 /* Pods_BusinessFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BusinessFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46A8C7C3C4DE36CD804A256 /* Pods-BusinessFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BusinessFinder.debug.xcconfig"; path = "Target Support Files/Pods-BusinessFinder/Pods-BusinessFinder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				44113AFA2A01DE1F0036510D /* BusinessName.swift */,
 				44113AFC2A01DE5F0036510D /* BusinessRating.swift */,
 				44113AFE2A01E0640036510D /* BusinessReviewCount.swift */,
+				44113B002A01E0B40036510D /* BusinessCategories.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			files = (
 				44113AF92A01DD8A0036510D /* BusinessImage.swift in Sources */,
 				44113AED2A01D6C30036510D /* NetworkManager.swift in Sources */,
+				44113B012A01E0B40036510D /* BusinessCategories.swift in Sources */,
 				44113AD72A00FEBF0036510D /* BusinessResponse.swift in Sources */,
 				44113AF72A01DCEF0036510D /* BusinessItem.swift in Sources */,
 				44113AF52A01DB580036510D /* HomeView.swift in Sources */,
