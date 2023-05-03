@@ -7,7 +7,7 @@
 
 import MapKit
 
-struct Business {
+struct Business: Equatable {
     let id: String
     let alias: String
     let name: String
@@ -52,5 +52,20 @@ struct Business {
         distance = response.distance
         hours = response.hours.map { BusinessHours(response: $0) }
         
+    }
+    
+    static func == (lhs: Business, rhs: Business) -> Bool {
+        return lhs.id == rhs.id
+        && lhs.alias == rhs.alias
+        && lhs.name == rhs.name
+        && lhs.imageUrl == rhs.imageUrl
+        && lhs.isClosed == rhs.isClosed
+        && lhs.url == rhs.url
+        && lhs.reviewCount == rhs.reviewCount
+        && lhs.rating == rhs.rating
+        && lhs.transactions == rhs.transactions
+        && lhs.price == rhs.price
+        && lhs.phone == rhs.phone
+        && lhs.displayPhone == rhs.displayPhone
     }
 }
