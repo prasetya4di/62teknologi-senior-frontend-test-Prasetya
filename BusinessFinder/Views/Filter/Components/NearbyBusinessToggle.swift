@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct NearbyBusinessToggle: View {
+    @EnvironmentObject private var viewModel: FilterViewModel
     @Binding var isOn: Bool
     
     var body: some View {
         Toggle(isOn: $isOn) {
             Text("Nearby Business")
         }
-    }
-}
-
-struct NearbyBusinessToggle_Previews: PreviewProvider {
-    static var previews: some View {
-        NearbyBusinessToggle(isOn: .constant(true))
+        .onChange(of: isOn) { newValue in
+            viewModel.toggleNearbyLocation(isOn)
+        }
     }
 }

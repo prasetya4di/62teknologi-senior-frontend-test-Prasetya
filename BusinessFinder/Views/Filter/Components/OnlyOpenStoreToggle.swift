@@ -8,19 +8,15 @@
 import SwiftUI
 
 struct OnlyOpenStoreToggle: View {
+    @EnvironmentObject private var viewModel: FilterViewModel
     @Binding var isOn: Bool
     
     var body: some View {
         Toggle(isOn: $isOn) {
             Text("Open Store")
         }
-    }
-}
-
-struct OnlyOpenStoreToggle_Previews: PreviewProvider {
-    static var previews: some View {
-        OnlyOpenStoreToggle(
-            isOn: .constant(true)
-        )
+        .onChange(of: isOn) { newValue in
+            viewModel.toggleIsOpen(newValue)
+        }
     }
 }

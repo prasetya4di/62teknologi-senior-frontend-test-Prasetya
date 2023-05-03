@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SortByPicker: View {
+    @EnvironmentObject private var viewModel: FilterViewModel
     @Binding var selection: SortOption
     let sortOptions: [SortOption]
     
@@ -21,20 +22,8 @@ struct SortByPicker: View {
                 }
             }
         }
-    }
-}
-
-struct SortByPicker_Previews: PreviewProvider {
-    static var previews: some View {
-        let sortOptions = [
-            SortOption(label: "Best Match", value: "best_match"),
-            SortOption(label: "Rating", value: "rating"),
-            SortOption(label: "Review Count", value: "review_count"),
-        ]
-        
-        SortByPicker(
-            selection: .constant(sortOptions.first!),
-            sortOptions: sortOptions
-        )
+        .onChange(of: selection) { newValue in
+            viewModel.changeSortOption(newValue)
+        }
     }
 }
