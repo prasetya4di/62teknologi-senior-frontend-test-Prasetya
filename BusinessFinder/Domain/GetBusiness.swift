@@ -22,7 +22,9 @@ class GetBusinessImpl: GetBusiness {
     func call() async throws -> [Business] {
         try await businessRepository
             .getBusiness(
-                location: Locale.current.language.region?.identifier ?? "ID")
+                location: Locale.current.language.region?.identifier ?? "ID",
+                offset: 0
+            )
             .businesses.map { response in
                 Business(response: response)
             }

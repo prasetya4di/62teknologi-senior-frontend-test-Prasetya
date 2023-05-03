@@ -8,8 +8,8 @@
 import Alamofire
 
 protocol BusinessRepository {
-    func getBusiness(location: String) async throws -> BusinessResponse
-    func getBusiness(location: String, term: String) async throws -> BusinessResponse
+    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse
+    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse
     func getBusinessReview(id: String) async throws -> ReviewsResponse
 }
@@ -21,12 +21,12 @@ class BusinessRepositoryImpl: BusinessRepository {
         self.businessService = businessService
     }
     
-    func getBusiness(location: String) async throws -> BusinessResponse {
-        try await businessService.getBusiness(location: location)
+    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse {
+        try await businessService.getBusiness(location: location, offset: offset)
     }
     
-    func getBusiness(location: String, term: String) async throws -> BusinessResponse {
-        try await businessService.getBusiness(location: location, term: term)
+    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse {
+        try await businessService.getBusiness(location: location, offset: offset, term: term)
     }
     
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse {

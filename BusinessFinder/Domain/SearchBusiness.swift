@@ -20,7 +20,11 @@ class SearchBusinessImpl: SearchBusiness {
     
     func call(location: String, term: String) async throws -> [Business] {
         try await repository
-            .getBusiness(location: location, term: term)
+            .getBusiness(
+                location: location,
+                offset: 0,
+                term: term
+            )
             .businesses
             .map { Business(response: $0) }
     }

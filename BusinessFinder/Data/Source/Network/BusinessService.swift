@@ -8,8 +8,8 @@
 import Alamofire
 
 protocol BusinessService {
-    func getBusiness(location: String) async throws -> BusinessResponse
-    func getBusiness(location: String, term: String) async throws -> BusinessResponse
+    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse
+    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse
     func getBusinessDetail(id: String) async throws -> BusinessDetailResponse
     func getBusinessReview(id: String) async throws -> ReviewsResponse
 }
@@ -22,24 +22,24 @@ class BusinessServiceImpl: BusinessService {
         self.networkManager = networkManager
     }
     
-    func getBusiness(location: String) async throws -> BusinessResponse {
+    func getBusiness(location: String, offset: Int) async throws -> BusinessResponse {
         try await self.networkManager.get(
             of: BusinessResponse.self,
             path: "/search",
             parameters: [
                 "location": location,
-                "sort_by": "best_match"
+                "offset": offset
             ])
     }
     
-    func getBusiness(location: String, term: String) async throws -> BusinessResponse {
+    func getBusiness(location: String, offset: Int, term: String) async throws -> BusinessResponse {
         return try await self.networkManager.get(
             of: BusinessResponse.self,
             path: "/search",
             parameters: [
                 "term": term,
                 "location": location,
-                "sort_by": "best_match"
+                "offset": offset
             ])
     }
     
