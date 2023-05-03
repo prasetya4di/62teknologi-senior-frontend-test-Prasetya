@@ -53,7 +53,41 @@ struct Business: Equatable {
         phone = response.phone
         displayPhone = response.displayPhone
         distance = response.distance
-        
+    }
+    
+    init(
+        id: String,
+        alias: String,
+        name: String,
+        imageUrl: String,
+        isClosed: Bool,
+        url: String,
+        reviewCount: Int,
+        categories: [BusinessCategory],
+        rating: Double,
+        coordinates: BusinessCoordinate,
+        transactions: [String],
+        price: String?,
+        location: BusinessLocation,
+        phone: String,
+        displayPhone: String,
+        distance: Double?) {
+            self.id = id
+            self.alias = alias
+            self.name = name
+            self.imageUrl = imageUrl
+            self.isClosed = isClosed
+            self.url = url
+            self.reviewCount = reviewCount
+            self.categories = categories
+            self.rating = rating
+            self.coordinates = coordinates
+            self.transactions = transactions
+            self.price = price
+            self.location = location
+            self.phone = phone
+            self.displayPhone = displayPhone
+            self.distance = distance
     }
     
     static func == (lhs: Business, rhs: Business) -> Bool {

@@ -13,4 +13,9 @@ struct BusinessCoordinate {
         latitude = response.latitude
         longitude = response.longitude
     }
+    
+    init(latitude: Double, longitude: Double) {
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }

@@ -27,4 +27,26 @@ struct BusinessLocation {
         displayAddress = response.displayAddress
         crossStreets = response.crossStreets
     }
+    
+    init(
+        address1: String?,
+        address2: String?,
+        address3: String?,
+        city: String?,
+        zipCode: String?,
+        country: String?,
+        state: String?,
+        displayAddress: [String],
+        crossStreets: String?
+    ) {
+        self.address1 = address1
+        self.address2 = address2
+        self.address3 = address3
+        self.city = city
+        self.zipCode = zipCode
+        self.country = country
+        self.state = state
+        self.displayAddress = displayAddress
+        self.crossStreets = crossStreets
+    }
 }

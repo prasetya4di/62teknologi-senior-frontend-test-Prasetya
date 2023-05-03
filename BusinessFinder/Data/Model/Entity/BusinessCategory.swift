@@ -13,4 +13,9 @@ struct BusinessCategory {
         alias = response.alias
         title = response.title
     }
+    
+    init(alias: String, title: String) {
+        self.alias = alias
+        self.title = title
+    }
 }
