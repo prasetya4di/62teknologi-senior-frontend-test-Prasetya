@@ -16,6 +16,18 @@ struct DetailImageSlideCover: View {
             DetailImageCover(imageUrl: photos[index])
             Rectangle()
                 .fill(Color.black.opacity(0.2))
+            
+            VStack {
+                Spacer()
+                HStack {
+                    ForEach(0...photos.count-1, id: \.self) { id in
+                        Circle()
+                            .fill(id == index ? .white : .white.opacity(0.5))
+                            .frame(width: 8, height: 8)
+                    }
+                }
+                .padding()
+            }
             HStack {
                 Button {
                     updateIndex(-1)
@@ -39,12 +51,14 @@ struct DetailImageSlideCover: View {
     }
     
     func updateIndex(_ value: Int) {
-        if index + value < 0 {
-            index = photos.count - 1
-        } else if index + value > photos.count - 1 {
-            index = 0
-        } else {
-            index += value
+        withAnimation {
+            if index + value < 0 {
+                index = photos.count - 1
+            } else if index + value > photos.count - 1 {
+                index = 0
+            } else {
+                index += value
+            }
         }
     }
 }
