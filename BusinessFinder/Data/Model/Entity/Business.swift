@@ -14,9 +14,9 @@ struct Business {
     let imageUrl: String
     let isClosed: Bool
     let url: String
-    let reviewCount: String
+    let reviewCount: Int
     let categories: [BusinessCategory]
-    let rating: String
+    let rating: Int
     private let coordinates: BusinessCoordinate
     let transactions: [String]
     let price: String?

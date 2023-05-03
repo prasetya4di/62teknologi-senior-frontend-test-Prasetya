@@ -20,9 +20,9 @@ struct BusinessResponseData: Decodable {
     let imageUrl: String
     let isClosed: Bool
     let url: String
-    let reviewCount: String
+    let reviewCount: Int
     let categories: [BusinessResponseCategory]
-    let rating: String
+    let rating: Int
     let coordinates: BusinessResponseCoordinate
     let transactions: [String]
     let price: String?
