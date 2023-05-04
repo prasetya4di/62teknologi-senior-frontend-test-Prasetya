@@ -26,7 +26,6 @@ struct FilterView: View {
             Divider()
             
             Section {
-                NearbyBusinessToggle(isOn: $nearbyLocation)
                 OnlyOpenStoreToggle(isOn: $onlyOpenStore)
                 SortByPicker(
                     selection: $selectedSortOption,
